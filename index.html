@@ -640,11 +640,6 @@ function playTrack(i) {
     document.getElementById('mobile-player').style.display = 'block';
     return;
   }
-  currentTrack = i;
-  isPaused = false;
-  document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('playing'));
-  document.getElementById('card-'+i)?.classList.add('playing');
-  const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(tracks[i].url)}&color=%23f56a00&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false`;
   document.getElementById('sc-player').src = src;
   document.getElementById('nowLabel').textContent = tracks[i].short + ' — Joel Freck';
   document.getElementById('nowBar').classList.add('on');
