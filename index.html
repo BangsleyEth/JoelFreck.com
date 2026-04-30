@@ -104,9 +104,9 @@ nav {
 .scroll-cue { display:none; }
 
 /* ── ABOUT ── */
-#about { padding:var(--sp) 44px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; background:var(--bg2); position:relative; overflow:hidden; }
+#about { padding:var(--sp) 44px; display:grid; grid-template-columns:5fr 7fr; gap:48px; align-items:center; background:var(--bg2); position:relative; overflow:hidden; }
 #about::before { content:''; position:absolute; top:-40%; right:-15%; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(245,106,0,0.06) 0%, transparent 70%); pointer-events:none; }
-.about-frame { aspect-ratio:4/5; background:var(--bg3); border:1px solid var(--border); overflow:hidden; position:relative; }
+.about-frame { aspect-ratio:3/4; max-height:420px; background:var(--bg3); border:1px solid var(--border); overflow:hidden; position:relative; }
 .about-frame img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
 .about-corner { position:absolute; top:-12px; right:-12px; width:44px; height:44px; border-top:1.5px solid var(--or); border-right:1.5px solid var(--or); opacity:0.4; }
 .about-wrap { position:relative; }
@@ -241,12 +241,13 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
 .res-photo { background:var(--bg3); border:1px solid var(--border); overflow:hidden; position:relative; }
 .res-photo img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.85) contrast(1.05); }
 .res-photo-ph { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--muted); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; padding:20px; text-align:center; }
-.res-photo:nth-child(1) { grid-column:1/2; aspect-ratio:1/1; }
-.res-photo:nth-child(2) { grid-column:2/3; aspect-ratio:1/1; }
-.res-photo:nth-child(3) { grid-column:1/3; aspect-ratio:16/7; }
+.res-photo:nth-child(1) { grid-column:1/2; aspect-ratio:1/1; max-height:240px; }
+.res-photo:nth-child(2) { grid-column:2/3; aspect-ratio:1/1; max-height:240px; }
+.res-photo:nth-child(3) { grid-column:1/3; aspect-ratio:21/7; max-height:200px; }
 
 /* ── MOBILE FIXES ── */
 @media (max-width:900px) {
+  #gram .ft, #gram iframe { max-height:280px; overflow:hidden; }
   nav { padding:0 16px; }
   .nav-center { display:none; }
   .nav-right { gap:10px; }
@@ -258,8 +259,8 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
   .hero-name { text-align:center; font-size:clamp(4rem,18vw,7rem); }
   .hero-sub { text-align:center; max-width:100%; }
   .hero-ctas { justify-content:center; }
-  .hero-right { height:75vw; order:-1; }
-  .hero-right::after { background:linear-gradient(to bottom, transparent 50%, var(--bg) 100%); }
+  .hero-right { height:55vw; order:-1; }
+  .hero-right::after { background:linear-gradient(to bottom, transparent 60%, var(--bg) 100%); }
   #about { grid-template-columns:1fr; padding:var(--sp) 24px; gap:24px; }
   .about-wrap:first-child { display:none; }
   #gram { padding:var(--sp) 20px; }
@@ -494,7 +495,7 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
         </div>
         <a href="https://open.spotify.com/artist/2UDLunvKgvTASh2DzxWgXj" target="_blank" class="stream-open">Open ↗</a>
       </div>
-      <iframe class="stream-embed" src="https://open.spotify.com/embed/artist/2UDLunvKgvTASh2DzxWgXj?utm_source=generator&theme=0" height="340" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe class="stream-embed" src="https://open.spotify.com/embed/artist/2UDLunvKgvTASh2DzxWgXj?utm_source=generator&theme=0&type=artist" height="452" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <div class="stream-card">
       <div class="stream-card-header">
@@ -504,7 +505,7 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
         </div>
         <a href="https://www.youtube.com/joelfreck" target="_blank" class="stream-open">Open ↗</a>
       </div>
-      <iframe class="stream-embed" height="340" src="https://www.youtube.com/embed/videoseries?list=UUItF_XacJS6pe8ZlwgEiMKg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      <iframe class="stream-embed" height="340" src="https://www.youtube.com/embed/videoseries?list=UUItF_XacJS6pe8ZlwgEiMKg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" height="452"></iframe>
     </div>
   </div>
 </section>
@@ -549,11 +550,6 @@ const tracks = [
   { url:'https://soundcloud.com/joelfreck/halseywithoutme', short:'Without Me (Remix)', year:'2025' },
   { url:'https://soundcloud.com/joelfreck/pump-up-stephanie', short:'Pump Up Stephanie (Edit)', year:'2025' },
   { url:'https://soundcloud.com/joelfreck/messyremix', short:'Messy (Edit)', year:'2025' },
-  { url:'https://soundcloud.com/joelfreck/no-surrender', short:'No Surrender (ft. Kayrae)', year:'2024' },
-  { url:'https://soundcloud.com/joelfreck/vaatu', short:'Vaatu (Original Mix)', year:'2024' },
-  { url:'https://soundcloud.com/joelfreck/falling', short:'Falling (Original Mix)', year:'2024' },
-  { url:'https://soundcloud.com/joelfreck/warehouse', short:'Warehouse (Original Mix)', year:'2023' },
-  { url:'https://soundcloud.com/joelfreck/bounce', short:'Bounce (Original Mix)', year:'2023' },
 ];
 
 const CARD_W = 204;
