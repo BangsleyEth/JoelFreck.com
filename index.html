@@ -271,7 +271,8 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
 
 /* ── MOBILE FIXES ── */
 @media (max-width:900px) {
-  #gram .ft, #gram iframe { max-height:280px; overflow:hidden; }
+  #gram .ft { min-height:320px; }
+  #gram iframe { max-width:100%; }
   nav { padding:0 16px; }
   .nav-center { display:none; }
   .nav-right { gap:10px; }
@@ -296,7 +297,8 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
   #residency { padding:var(--sp) 24px; }
   .res-grid { grid-template-columns:1fr; gap:32px; }
   .res-info { order:1; }
-  .res-collage { order:2; }
+  .res-collage { order:2; min-height:400px; }
+  .res-photo { min-height:120px; }
   footer { padding:24px 20px; flex-direction:column; align-items:flex-start; gap:16px; }
   .modal { padding:28px 20px; }
   .mrow { grid-template-columns:1fr; }
@@ -507,6 +509,15 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
   <iframe id="sc-player" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" scrolling="no" allow="autoplay" src=""></iframe>
 </section>
 
+<!-- Mobile floating player (must be visible for iOS to allow audio) -->
+<div id="mobile-player" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--bg2);border-top:1px solid var(--border);">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px 4px;">
+    <span id="mobile-now-label" style="font-size:0.75rem;color:var(--cream);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:12px;"></span>
+    <button onclick="closeMobilePlayer()" style="background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1;">&#x2715;</button>
+  </div>
+  <iframe id="sc-player-mobile" scrolling="no" allow="autoplay" style="width:100%;height:166px;border:none;display:block;" src=""></iframe>
+</div>
+
 <!-- STREAMING -->
 <section id="streaming">
   <div class="slabel">Streaming</div>
@@ -606,7 +617,29 @@ function updateArrows() {
 let currentTrack = -1;
 let isPaused = false;
 
+function isMobile() {
+  return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 900;
+}
+
+function closeMobilePlayer() {
+  document.getElementById('mobile-player').style.display = 'none';
+  document.getElementById('sc-player-mobile').src = '';
+  document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('playing'));
+  currentTrack = -1;
+}
+
 function playTrack(i) {
+  currentTrack = i;
+  isPaused = false;
+  document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('playing'));
+  document.getElementById('card-'+i)?.classList.add('playing');
+  const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(tracks[i].url)}&color=%23f56a00&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false`;
+  if (isMobile()) {
+    document.getElementById('sc-player-mobile').src = src;
+    document.getElementById('mobile-now-label').textContent = tracks[i].short + ' — Joel Freck';
+    document.getElementById('mobile-player').style.display = 'block';
+    return;
+  }
   currentTrack = i;
   isPaused = false;
   document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('playing'));
@@ -654,6 +687,8 @@ function prevTrack() {
 
 function stopTrack() {
   document.getElementById('sc-player').src = '';
+  document.getElementById('sc-player-mobile').src = '';
+  document.getElementById('mobile-player').style.display = 'none';
   document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('playing'));
   document.getElementById('nowBar').classList.remove('on');
   currentTrack = -1;
