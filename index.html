@@ -303,6 +303,21 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
   .modal { padding:28px 20px; }
   .mrow { grid-template-columns:1fr; }
 }
+
+/* ── LIVE FOOTAGE ── */
+#live { padding:52px 44px 64px; background:var(--bg); border-top:1px solid var(--border); }
+.live-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,340px); align-items:center; gap:clamp(32px,6vw,90px); }
+.live-copy .stitle { font-size:clamp(3.3rem,6vw,6rem); }
+.live-copy .stitle em { color:var(--or); font-style:normal; }
+.live-copy p { margin-top:24px; max-width:500px; color:var(--muted); font-size:1rem; line-height:1.8; font-weight:300; }
+.live-kicker { display:block; margin-top:28px; color:var(--or2); font-size:0.66rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; }
+.live-main { position:relative; width:100%; aspect-ratio:9/16; overflow:hidden; background:var(--bg3); border:1px solid var(--border); box-shadow:0 22px 60px rgba(0,0,0,0.4); }
+.live-main video { display:block; width:100%; height:100%; object-fit:cover; }
+.live-controls { position:absolute; z-index:2; right:12px; bottom:12px; display:flex; gap:8px; }
+.live-controls button { background:rgba(15,13,11,0.88); border:1px solid rgba(240,230,214,0.4); color:var(--cream); padding:10px 12px; min-height:42px; font:500 0.68rem var(--fb); letter-spacing:0.05em; cursor:pointer; }
+.live-controls button:hover,.live-controls button:focus-visible { border-color:var(--or); color:var(--or2); }
+.live-controls button:focus-visible { outline:2px solid var(--or); outline-offset:2px; }
+@media (max-width:800px) { #live { padding:40px 20px 48px; } .live-inner { grid-template-columns:1fr; gap:28px; } .live-copy .stitle { font-size:clamp(3.1rem,13vw,5rem); } .live-copy p { margin-top:16px; } .live-main { width:min(100%,330px); margin:0 auto; } }
 </style>
 </head>
 <body>
@@ -332,6 +347,7 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
 <nav>
   <a href="#home" class="nav-logo">Joel<em>.</em>Freck</a>
   <ul class="nav-center">
+    <li><a href="#live">Live</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#residency">Residency</a></li>
     <li><a href="#music">Music</a></li>
@@ -377,13 +393,32 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
     <h1 class="hero-name">Joel<em>Freck</em></h1>
     <p class="hero-sub">Anjunabeats winner. Armada artist. ECMA nominated. House music from Halifax to festival mainstages.</p>
     <div class="hero-ctas">
-      <a href="#music" class="btn-p">Listen Now</a>
+      <a href="#live" class="btn-p">Watch Live</a>
       <button class="btn-g" onclick="openModal()">Contact</button>
     </div>
     <div class="scroll-cue">Scroll</div>
   </div>
   <div class="hero-right">
     <img class="hero-photo" src="JFFULL.png" alt="Joel Freck - House Music DJ and Producer from Halifax Canada" style="object-position:center top;">
+  </div>
+</section>
+
+<!-- LIVE FOOTAGE -->
+<section id="live" aria-labelledby="live-title">
+  <div class="live-inner">
+    <div class="live-copy">
+      <div class="slabel">Live footage</div>
+      <h2 class="stitle" id="live-title">See the<br><em>room.</em></h2>
+      <p>A quick look at my live sets, including nights at Pacifico alongside PT93. The music and energy are easier to show than explain.</p>
+      <span class="live-kicker">Joel Freck · performance highlights</span>
+    </div>
+    <div class="live-main">
+      <video id="livePromo" src="joel-pt93-promo-web.mp4" autoplay muted loop playsinline preload="metadata" poster="joel-pt93-promo-poster.jpg" aria-label="Joel Freck live performance highlights with PT93"></video>
+      <div class="live-controls">
+        <button type="button" id="livePlayToggle" aria-label="Pause video">Pause</button>
+        <button type="button" id="liveSoundToggle" aria-label="Turn sound on" aria-pressed="false">Sound off</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -578,6 +613,45 @@ function sendMsg(e) {
   f.style.display='none';
   document.getElementById('modalOk').style.display='block';
 }
+
+// ── LIVE VIDEO ──
+const livePromo = document.getElementById('livePromo');
+const livePlayToggle = document.getElementById('livePlayToggle');
+const liveSoundToggle = document.getElementById('liveSoundToggle');
+let liveManuallyPaused = false;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function syncLiveControls() {
+  livePlayToggle.textContent = livePromo.paused ? 'Play' : 'Pause';
+  livePlayToggle.setAttribute('aria-label', livePromo.paused ? 'Play video' : 'Pause video');
+  liveSoundToggle.textContent = livePromo.muted ? 'Sound off' : 'Sound on';
+  liveSoundToggle.setAttribute('aria-label', livePromo.muted ? 'Turn sound on' : 'Turn sound off');
+  liveSoundToggle.setAttribute('aria-pressed', String(!livePromo.muted));
+}
+livePlayToggle.addEventListener('click', () => {
+  if (livePromo.paused) { liveManuallyPaused = false; livePromo.play().catch(syncLiveControls); }
+  else { liveManuallyPaused = true; livePromo.pause(); }
+  syncLiveControls();
+});
+liveSoundToggle.addEventListener('click', () => {
+  livePromo.muted = !livePromo.muted;
+  if (livePromo.paused) { liveManuallyPaused = false; livePromo.play().catch(syncLiveControls); }
+  syncLiveControls();
+});
+livePromo.addEventListener('play', syncLiveControls);
+livePromo.addEventListener('pause', syncLiveControls);
+livePromo.addEventListener('volumechange', syncLiveControls);
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) { livePromo.pause(); livePromo.muted = true; }
+    else if (!liveManuallyPaused && !reducedMotion && document.visibilityState === 'visible') { livePromo.play().catch(syncLiveControls); }
+    syncLiveControls();
+  }, { threshold:0.2 }).observe(livePromo);
+}
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') { livePromo.pause(); livePromo.muted = true; syncLiveControls(); }
+});
+if (reducedMotion) livePromo.pause();
+syncLiveControls();
 
 // ── SC CAROUSEL ──
 const tracks = [
