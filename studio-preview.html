@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="theme-color" content="#181918">
+  <title>Joel Freck — Design Preview</title>
+  <meta name="description" content="Joel Freck. House music DJ and producer from Halifax, Canada. Live performances, original releases, edits and remixes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#181918;--paper:#efece4;--orange:#ff713d;--muted:#aaa9a1;--line:#ffffff25;--display:'Barlow Condensed',Impact,sans-serif;--body:'DM Sans',sans-serif;--gutter:clamp(22px,5vw,80px)}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;-webkit-font-smoothing:antialiased}
+    body.modal-open{overflow:hidden}
+    button,a,input{-webkit-tap-highlight-color:transparent}
+    button{font:inherit;cursor:pointer}
+    a{color:inherit;text-decoration:none}
+    button:focus-visible,a:focus-visible,video:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+    img,video{display:block;max-width:100%}
+    button{color:inherit}
+    svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5}
+    .wrap{width:min(1440px,100%);margin-inline:auto;padding-inline:var(--gutter)}
+    .eyebrow{font-size:11px;line-height:1.6;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .skip{position:fixed;left:20px;top:-80px;padding:15px;background:var(--paper);color:var(--ink);z-index:100}
+    .skip:focus{top:20px}
+    .preview-note{display:flex;justify-content:space-between;gap:16px;padding-block:9px;color:#b7b8b0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+    .preview-note a{text-decoration:underline;text-underline-offset:3px}
+    .site-header{border-bottom:1px solid var(--line)}
+    .nav{height:83px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .wordmark{font-family:var(--display);font-size:31px;font-weight:800;line-height:1;letter-spacing:-.03em;white-space:nowrap}
+    .wordmark span{color:var(--orange)}
+    .nav-links{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:500}
+    .nav-links a{padding-block:12px}
+    .nav-links a:hover{color:var(--orange)}
+    .nav-book{display:flex;gap:20px;align-items:center;border:1px solid #ffffff55;padding:12px 17px;min-height:44px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+    .nav-book:hover{background:var(--paper);color:var(--ink)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(30px,7vw,100px);padding-top:48px;padding-bottom:55px;align-items:center}
+    .hero-copy{padding-block:18px}
+    .hero-location{display:flex;align-items:center;gap:12px;margin:0 0 27px}
+    .orange-dot{width:7px;height:7px;display:inline-block;flex:none;background:var(--orange);border-radius:50%}
+    h1{font-family:var(--display);font-size:clamp(118px,15.1vw,224px);line-height:.76;letter-spacing:-.025em;text-transform:uppercase;font-weight:800;margin:0 0 34px}
+    h1 span{display:block}
+    h1 span:last-child{color:var(--orange);margin-top:7px}
+    .hero-description{font-size:clamp(17px,1.65vw,22px);line-height:1.6;max-width:440px;color:#cfcec6;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+    .button{display:inline-flex;justify-content:center;align-items:center;gap:26px;min-height:50px;padding:14px 21px;font-size:12px;font-weight:600;border:1px solid transparent}
+    .button-primary{background:var(--orange);color:var(--ink)}
+    .button-primary:hover{background:#ff8c60}
+    .button-outline{border-color:#ffffff45}
+    .button-outline:hover{border-color:var(--paper)}
+    .hero-footnote{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:33px 0 0}
+    .hero-film{width:min(100%,342px);justify-self:center;position:relative;isolation:isolate;margin:0}
+    .hero-film::before{content:'';position:absolute;inset:13px -13px -13px 13px;border:1px solid #ff713d65;z-index:-1}
+    .hero-film-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+    .hero-film-top span:first-child{display:flex;align-items:center;gap:8px}
+    .hero-film-frame{position:relative;aspect-ratio:9/16;background:#252623;overflow:hidden}
+    .hero-film video{width:100%;height:100%;object-fit:cover}
+    .hero-film-frame::after{content:'';position:absolute;inset:70% 0 0;background:linear-gradient(transparent,#0009);pointer-events:none}
+    .film-controls{position:absolute;z-index:1;inset:auto 12px 12px;display:flex;justify-content:space-between;gap:8px}
+    .film-controls button{display:flex;align-items:center;gap:8px;min-height:42px;padding:10px 13px;border:1px solid #ffffff55;background:#141514e8;font-size:11px}
+    .film-controls button:hover{background:var(--paper);color:var(--ink)}
+    .film-controls svg{width:15px;height:15px}
+    .hero-film figcaption{font-size:10px;line-height:1.65;color:var(--muted);margin-top:12px;max-width:330px}
+    .credentials{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr)}
+    .credential{padding:27px 30px 29px 0}
+    .credential+.credential{border-left:1px solid var(--line);padding-left:36px}
+    .credential small{display:block;font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+    .credential strong{font-family:var(--display);font-size:34px;line-height:1.1;letter-spacing:.025em;text-transform:uppercase;font-weight:600}
+    .section{padding-block:85px}
+    .section-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:32px}
+    .section-index{display:flex;gap:15px;color:var(--muted);margin-bottom:16px}
+    .section-index span{color:var(--orange)}
+    h2{font-family:var(--display);font-size:clamp(58px,7.5vw,104px);font-weight:700;letter-spacing:-.02em;line-height:.91;text-transform:uppercase;margin:0}
+    .section-top p{max-width:365px;color:var(--muted);font-size:14px;line-height:1.75;margin:0 0 3px}
+    .clips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .clip{display:block;width:100%;padding:0;text-align:left;background:none;border:0}
+    .clip-image{aspect-ratio:16/10;position:relative;overflow:hidden;background:#242523}
+    .clip-image img{width:100%;height:100%;object-fit:cover;transition:transform .35s,filter .35s;filter:saturate(.85)}
+    .clip:hover img{transform:scale(1.035);filter:saturate(1.05)}
+    .clip-play{position:absolute;bottom:16px;left:16px;display:grid;place-items:center;width:43px;height:43px;border:1px solid #ffffff8f;border-radius:50%;background:#15151575;backdrop-filter:blur(8px)}
+    .clip:hover .clip-play{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+    .clip-duration{position:absolute;bottom:26px;right:17px;font-size:10px;letter-spacing:.07em;color:#fff;text-shadow:0 1px 4px #000}
+    .clip-caption{display:flex;justify-content:space-between;align-items:center;padding-top:16px;gap:8px;font-size:13px}
+    .clip-caption span:last-child{font-size:10px;color:var(--muted)}
+    .support-line{margin-top:36px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:22px;align-items:center}
+    .support-line>span{color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;flex-shrink:0}
+    .support-names{display:flex;flex-wrap:wrap;gap:12px 28px;font-family:var(--display);font-weight:600;font-size:25px;letter-spacing:.025em;text-transform:uppercase}
+    .music-section{background:var(--paper);color:var(--ink)}
+    .music-section .section-index{color:#60615a}.music-section .section-index span{color:#9c3813}
+    .music-section .section-top p{color:#60615a}
+    .music-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(30px,6vw,90px);align-items:start;margin-top:43px}
+    .music-art{aspect-ratio:1/1;background:var(--orange);position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:25px;overflow:hidden}
+    .record{position:absolute;width:83%;aspect-ratio:1;right:-19%;top:13%;border-radius:50%;background:repeating-radial-gradient(circle at center,#222321 0 2px,#2c2d2a 3px 4px);box-shadow:0 0 0 1px #20211c}
+    .record::before{content:'JF';position:absolute;inset:36%;border-radius:50%;display:grid;place-items:center;font:700 50px var(--display);background:var(--paper);color:var(--ink)}
+    .record::after{content:'';position:absolute;inset:49%;border-radius:50%;background:var(--ink)}
+    .art-top,.art-bottom{position:relative;z-index:1}
+    .art-top{display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.09em;text-transform:uppercase}
+    .art-bottom strong{font:800 clamp(45px,5vw,75px)/.85 var(--display);letter-spacing:-.025em;text-transform:uppercase;display:block}
+    .art-bottom small{display:block;margin-top:13px;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+    .music-player{margin-top:15px;min-height:92px;border-top:1px solid #18191830;padding-top:14px}
+    .music-player iframe{width:100%;height:166px;border:0;display:block}
+    .music-player [hidden]{display:none}
+    .track-external{display:inline-block;font-size:11px;margin-top:12px;text-decoration:underline;text-underline-offset:4px}
+    .player-placeholder{font-size:12px;color:#65665e;line-height:1.7;padding-right:25px;margin:0}
+    .track{display:grid;grid-template-columns:29px minmax(0,1fr) 38px;gap:12px;align-items:center;width:100%;padding:22px 0;border:0;border-top:1px solid #18191835;text-align:left;background:none;color:var(--ink)}
+    .track:last-of-type{border-bottom:1px solid #18191835}
+    .track-number{font-size:11px;color:#6c6c63}
+    .track-name{display:block;font-size:clamp(15px,1.6vw,21px);font-weight:500;line-height:1.3}
+    .track-type{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#6c6c63;margin-top:6px}
+    .track-play{display:grid;place-items:center;width:35px;height:35px;border:1px solid #18191850;border-radius:50%}
+    .track:hover .track-play,.track[aria-pressed="true"] .track-play{background:var(--ink);color:var(--paper)}
+    .track[aria-pressed="true"] .track-name{color:#a83b13}
+    .music-links{display:flex;gap:25px;flex-wrap:wrap;margin-top:25px;font-size:12px}
+    .text-link{display:inline-flex;align-items:center;gap:10px;border-bottom:1px solid currentColor;padding-bottom:5px}
+    .text-link:hover{color:#b4431b}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+    .about-photo{margin:0;position:relative}
+    .about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 34%}
+    .about-photo figcaption{position:absolute;bottom:15px;left:16px;font-size:10px;background:#181918c9;padding:8px 12px;letter-spacing:.07em;text-transform:uppercase}
+    .about-copy h2{font-size:clamp(56px,5.7vw,80px);margin-bottom:30px}
+    .about-copy p{font-size:14px;line-height:1.85;color:#c4c3bb;margin:0 0 20px}
+    .about-copy p.lead{font-size:20px;line-height:1.6;color:var(--paper)}
+    .about-stats{border-top:1px solid var(--line);margin-top:32px;padding-top:23px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .about-stats strong{display:block;font:700 49px/1 var(--display);color:var(--orange)}
+    .about-stats span{display:block;font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px;max-width:155px}
+    .booking{background:var(--orange);color:var(--ink);padding-block:66px}
+    .booking-inner{display:flex;justify-content:space-between;gap:48px;align-items:center}
+    .booking .eyebrow{margin:0 0 14px}
+    .booking h2{font-size:clamp(68px,8vw,110px)}
+    .booking-right{max-width:340px}
+    .booking-right p{font-size:14px;line-height:1.75;margin:0 0 21px}
+    .booking .button{background:var(--ink);color:var(--paper);width:100%;justify-content:space-between}
+    .booking .button:hover{background:#32352f}
+    .booking-email{display:block;margin-top:14px;font-size:12px;text-align:center;text-decoration:underline;text-underline-offset:4px}
+    .footer{padding-block:28px;display:flex;align-items:center;justify-content:space-between;gap:25px;font-size:11px;color:var(--muted)}
+    .socials{display:flex;gap:20px;flex-wrap:wrap}
+    .socials a:hover{color:var(--paper)}
+    .footer small{font-size:10px}
+    dialog{border:1px solid #ffffff35;padding:0;background:var(--ink);color:var(--paper);width:min(1060px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto}
+    dialog::backdrop{background:#000e;backdrop-filter:blur(8px)}
+    .dialog-top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:15px 20px;border-bottom:1px solid var(--line)}
+    .dialog-top h2{font:500 15px var(--body);text-transform:none;letter-spacing:0}
+    .dialog-close{background:none;border:1px solid #ffffff40;display:flex;align-items:center;gap:9px;font-size:11px;padding:8px 12px;min-height:40px}
+    .dialog-close:hover{background:var(--paper);color:var(--ink)}
+    dialog video{width:100%;aspect-ratio:16/9;max-height:75dvh;background:#000;object-fit:contain}
+    .media-status{font-size:12px;line-height:1.5;margin:0;padding:10px 20px;color:var(--muted)}
+    .media-status:empty{display:none}
+    @media(min-width:1600px){.hero{padding-top:58px;padding-bottom:65px}.hero-film{width:360px}}
+    @media(max-width:1000px){.nav-links{gap:20px}.hero{gap:40px;grid-template-columns:minmax(0,1fr) minmax(270px,.85fr)}h1{font-size:clamp(112px,16vw,164px)}.hero-description{font-size:17px}.hero-actions{gap:10px}.button{gap:18px;padding-inline:17px}.credentials .credential{padding-left:20px}.credentials .credential:first-child{padding-left:0}.credential strong{font-size:28px}.music-grid{gap:35px}.about{gap:40px}}
+    @media(max-width:720px){html{scroll-padding-top:20px}.preview-note{font-size:9px}.nav{height:70px;gap:12px}.nav-links{display:none}.wordmark{font-size:28px}.nav-book{font-size:10px;padding:10px 12px;gap:12px}.hero{grid-template-columns:1fr;padding-top:35px;padding-bottom:40px;gap:38px}.hero-copy{padding:0}.hero-location{font-size:10px;margin-bottom:25px}h1{font-size:clamp(108px,27vw,180px);line-height:.78;margin-bottom:27px}.hero-description{max-width:440px;font-size:17px}.hero-actions{margin-top:22px}.hero-footnote{margin-top:24px;font-size:9px}.hero-film{width:min(100%,310px)}.credentials{grid-template-columns:1fr}.credential,.credentials .credential,.credentials .credential:first-child{padding:19px 0;display:flex;align-items:center;justify-content:space-between;gap:15px}.credential+.credential{border-left:0;border-top:1px solid var(--line)}.credential small{font-size:9px;margin:0;max-width:140px}.credential strong{font-size:26px;text-align:right}.section{padding-block:53px}.section-top{display:block;margin-bottom:26px}.section-top p{margin-top:20px;font-size:13px}.section-index{font-size:10px;margin-bottom:13px}h2{font-size:65px}.clips{grid-template-columns:1fr;gap:28px}.clip-image{aspect-ratio:16/9}.clip-caption{padding-top:12px}.support-line{display:block;margin-top:29px}.support-names{margin-top:15px;gap:8px 20px;font-size:23px}.music-grid{grid-template-columns:1fr;gap:24px;margin-top:30px}.music-art{aspect-ratio:1.2/1}.art-bottom strong{font-size:63px}.music-player{min-height:0}.track{padding-block:19px}.track-name{font-size:17px}.music-links{font-size:11px}.about{grid-template-columns:1fr;gap:32px}.about-photo img{aspect-ratio:1/1;object-position:center 32%}.about-copy h2{font-size:62px;margin-bottom:23px}.about-copy p.lead{font-size:18px}.about-copy p{font-size:13px}.about-stats{margin-top:25px}.booking{padding-block:50px}.booking-inner{display:block}.booking h2{font-size:76px}.booking-right{margin-top:28px;max-width:none}.booking-right p{font-size:13px}.booking .button{max-width:420px}.booking-email{text-align:left;margin-top:19px}.footer{display:block;padding-block:25px}.socials{gap:16px;margin-bottom:22px}.footer small{line-height:1.8}.dialog-top{padding:12px}.dialog-top h2{font-size:13px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap preview-note"><span>Design preview / 01</span><a href="/">View current site ↗</a></div>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="wordmark" href="#main" aria-label="Joel Freck home">JOEL<span>.</span>FRECK</a>
+      <div class="nav-links"><a href="#live">Live</a><a href="#music">Music</a><a href="#about">About</a></div>
+      <a class="nav-book" href="#booking">Bookings <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="artist-name">
+      <div class="hero-copy">
+        <p class="eyebrow hero-location"><span class="orange-dot"></span>House music / Halifax, Canada</p>
+        <h1 id="artist-name"><span>Joel</span><span>Freck</span></h1>
+        <p class="hero-description">Current records, deeper cuts and original remixes. House music with range.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#music">Explore the music <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a class="button button-outline" href="#booking">Get in touch <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 14 10M5 10h9v9"/></svg></a>
+        </div>
+        <p class="hero-footnote">DJ / Producer / Armada &amp; Anjunabeats releases</p>
+      </div>
+      <figure class="hero-film">
+        <div class="hero-film-top"><span><span class="orange-dot"></span>Live highlights</span><span>00:34</span></div>
+        <div class="hero-film-frame">
+          <video id="hero-video" muted loop playsinline preload="metadata" poster="joel-pt93-promo-poster.jpg" aria-label="Joel Freck performance highlights with PT93"><source src="joel-pt93-promo-web.mp4" type="video/mp4"></video>
+          <div class="film-controls">
+            <button id="hero-play" type="button" aria-label="Play highlight video">Play</button>
+            <button id="hero-sound" type="button" aria-pressed="false" aria-label="Turn sound on"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4zm5 5 5 6m0-6-5 6"/></svg><span>Sound off</span></button>
+          </div>
+        </div>
+        <figcaption>Live footage from Joel Freck’s sets, including his residency with PT93.</figcaption>
+      </figure>
+    </section>
+    <div class="wrap">
+      <div class="credentials" aria-label="Selected credentials">
+        <div class="credential"><small>Beatport producer competition winner</small><strong>Anjunabeats</strong></div>
+        <div class="credential"><small>Releases on</small><strong>Armada Music</strong></div>
+        <div class="credential"><small>Dance recording nominations · 2021 / 2022</small><strong>East Coast Music Awards</strong></div>
+      </div>
+    </div>
+    <section id="live" class="wrap section" aria-labelledby="live-title">
+      <div class="section-top">
+        <div><div class="eyebrow section-index"><span>01</span>Performance</div><h2 id="live-title">Live, from<br>the floor.</h2></div>
+        <p>From the opening tracks to the closing set. A few moments from Joel’s nights behind the decks with PT93.</p>
+      </div>
+      <div class="clips">
+        <button class="clip" type="button" data-video="summer-live-web.mp4" data-title="Summer set" data-poster="summer-live-poster.jpg" aria-label="Watch Summer set, 19 seconds">
+          <div class="clip-image"><img src="summer-live-poster.jpg" width="1280" height="720" loading="lazy" alt="Crowd dancing under green lights"><span class="clip-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span><span class="clip-duration">00:19</span></div>
+          <div class="clip-caption"><span>Summer set</span><span>01 / Live clip</span></div>
+        </button>
+        <button class="clip" type="button" data-video="life-sounding-good-live-web.mp4" data-title="Life sounding good" data-poster="life-sounding-good-live-poster.jpg" aria-label="Watch Life sounding good, 17 seconds">
+          <div class="clip-image"><img src="life-sounding-good-live-poster.jpg" width="1280" height="720" loading="lazy" alt="A full dance floor during a Joel Freck and PT93 set"><span class="clip-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span><span class="clip-duration">00:17</span></div>
+          <div class="clip-caption"><span>Life sounding good</span><span>02 / Live clip</span></div>
+        </button>
+        <button class="clip" type="button" data-video="shiver-live-web.mp4" data-title="Locked in" data-poster="shiver-live-poster.jpg" aria-label="Watch Locked in, 36 seconds">
+          <div class="clip-image"><img src="shiver-live-poster.jpg" width="1280" height="720" loading="lazy" alt="Joel Freck and PT93 performing behind the decks"><span class="clip-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span><span class="clip-duration">00:36</span></div>
+          <div class="clip-caption"><span>Locked in</span><span>03 / Live clip</span></div>
+        </button>
+      </div>
+      <div class="support-line"><span>Selected support appearances</span><div class="support-names"><span>Laidback Luke</span><span>James Kennedy</span><span>Dave Summer</span></div></div>
+    </section>
+    <section id="music" class="music-section section" aria-labelledby="music-title">
+      <div class="wrap">
+        <div class="section-top"><div><div class="eyebrow section-index"><span>02</span>Selected music</div><h2 id="music-title">Originals.<br>Edits. Remixes.</h2></div><p>A selection of Joel’s releases and club edits. Listen here or explore the full catalogue.</p></div>
+        <div class="music-grid">
+          <div>
+            <div class="music-art" aria-hidden="true"><div class="record"></div><div class="art-top"><span>Joel Freck</span><span>Selected sounds / 01</span></div><div class="art-bottom"><strong>Made for<br>the speakers.</strong><small>Original productions / Club edits</small></div></div>
+            <div class="music-player" id="music-player"><p class="player-placeholder" id="player-placeholder">Choose a track to listen.</p><iframe id="soundcloud-player" title="Joel Freck music player" allow="autoplay" hidden></iframe><a class="track-external" id="track-external" href="https://soundcloud.com/joelfreck" target="_blank" rel="noopener noreferrer" hidden>Open this track on SoundCloud ↗</a><p id="music-status" class="player-placeholder" role="status"></p></div>
+          </div>
+          <div>
+            <button class="track" type="button" data-track="https://soundcloud.com/joelfreck/stateside1" data-title="Stateside" aria-pressed="false"><span class="track-number">01</span><span><span class="track-name">Stateside</span><span class="track-type">Remix / 2026</span></span><span class="track-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span></button>
+            <button class="track" type="button" data-track="https://soundcloud.com/joelfreck/katy-perry-birthday" data-title="Birthday Heads Will Roll" aria-pressed="false"><span class="track-number">02</span><span><span class="track-name">Birthday Heads Will Roll</span><span class="track-type">Edit / 2025</span></span><span class="track-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span></button>
+            <button class="track" type="button" data-track="https://soundcloud.com/joelfreck/halseywithoutme" data-title="Without Me" aria-pressed="false"><span class="track-number">03</span><span><span class="track-name">Without Me</span><span class="track-type">Remix / 2025</span></span><span class="track-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span></button>
+            <button class="track" type="button" data-track="https://soundcloud.com/joelfreck/no-surrender" data-title="No Surrender" aria-pressed="false"><span class="track-number">04</span><span><span class="track-name">No Surrender <small>(ft. Kayrae)</small></span><span class="track-type">Original / 2024</span></span><span class="track-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span></button>
+            <button class="track" type="button" data-track="https://soundcloud.com/joelfreck/warehouse" data-title="Warehouse" aria-pressed="false"><span class="track-number">05</span><span><span class="track-name">Warehouse</span><span class="track-type">Original / 2023</span></span><span class="track-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span></button>
+            <div class="music-links"><a class="text-link" href="https://soundcloud.com/joelfreck" target="_blank" rel="noopener noreferrer">All tracks on SoundCloud ↗</a><a class="text-link" href="https://open.spotify.com/artist/2UDLunvKgvTASh2DzxWgXj" target="_blank" rel="noopener noreferrer">Spotify ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="wrap section about" aria-labelledby="about-title">
+      <figure class="about-photo"><img src="JF_Pacif.png" width="1214" height="1533" loading="lazy" alt="Joel Freck behind the decks"><figcaption>Joel Freck / Halifax, Canada</figcaption></figure>
+      <div class="about-copy">
+        <div class="eyebrow section-index"><span>03</span>The artist</div><h2 id="about-title">A producer’s ear.<br>A DJ’s instinct.</h2>
+        <p class="lead">Joel Freck is a Canadian house DJ and producer with releases on Anjunabeats and Armada, and a sound that moves between underground records, recognizable vocals and his own edits.</p>
+        <p>A win in Beatport’s Anjunabeats producer competition led to a release with the label. His Laidback Luke remix competition win took him to Groove Cruise, with appearances in San Diego and Las Vegas. His music has earned support from Armin van Buuren and Above &amp; Beyond, alongside East Coast Music Award nominations in 2021 and 2022.</p>
+        <p>In Halifax, Joel and PT93 spent three years opening and closing their Friday and Saturday residency. Within the first month, they grew roughly 20-person nights into regular 300–400-person rooms.</p>
+        <div class="about-stats"><div><strong>2,000+</strong><span>Audience for Joel’s solo opening set for James Kennedy</span></div><div><strong>3 years</strong><span>Opening and closing a Friday and Saturday residency with PT93</span></div></div>
+      </div>
+    </section>
+    <section id="booking" class="booking" aria-labelledby="booking-title">
+      <div class="wrap booking-inner"><div><p class="eyebrow">Club nights / Festivals / Support slots</p><h2 id="booking-title">Let’s talk<br>bookings.</h2></div><div class="booking-right"><p>Available for opening, headline and guest sets. Book Joel Freck solo or alongside PT93.</p><a class="button" href="mailto:joel.freck@gmail.com?subject=Joel%20Freck%20%E2%80%94%20Booking%20inquiry">Email Joel <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="booking-email" href="mailto:joel.freck@gmail.com">joel.freck@gmail.com</a></div></div>
+    </section>
+  </main>
+  <footer class="wrap footer"><div class="socials"><a href="https://www.instagram.com/joelfreck/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://soundcloud.com/joelfreck" target="_blank" rel="noopener noreferrer">SoundCloud ↗</a><a href="https://open.spotify.com/artist/2UDLunvKgvTASh2DzxWgXj" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a href="https://www.youtube.com/joelfreck" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div><small>© 2026 Joel Freck · Halifax, Canada</small></footer>
+  <dialog id="clip-dialog" aria-labelledby="clip-title"><div class="dialog-top"><h2 id="clip-title">Live clip</h2><button type="button" class="dialog-close" id="clip-close">Close <span aria-hidden="true">×</span></button></div><video id="clip-video" controls playsinline loop preload="none" aria-label="Selected live performance clip"></video><p class="media-status" id="clip-status" role="status"></p></dialog>
+  <script>
+    const hero = document.getElementById('hero-video');
+    const heroPlay = document.getElementById('hero-play');
+    const heroSound = document.getElementById('hero-sound');
+    const dialog = document.getElementById('clip-dialog');
+    const clipVideo = document.getElementById('clip-video');
+    const clipStatus = document.getElementById('clip-status');
+    const player = document.getElementById('soundcloud-player');
+    const placeholder = document.getElementById('player-placeholder');
+    const musicStatus = document.getElementById('music-status');
+    const trackExternal = document.getElementById('track-external');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let heroVisible = false;
+    let manuallyPaused = false;
+    let musicActive = false;
+    function syncHero() {
+      heroPlay.textContent = hero.paused ? 'Play' : 'Pause';
+      heroPlay.setAttribute('aria-label', hero.paused ? 'Play highlight video' : 'Pause highlight video');
+      heroSound.querySelector('span').textContent = hero.muted ? 'Sound off' : 'Sound on';
+      heroSound.setAttribute('aria-label', hero.muted ? 'Turn sound on' : 'Turn sound off');
+      heroSound.setAttribute('aria-pressed', String(!hero.muted));
+    }
+    function quietHero() { hero.pause(); hero.muted = true; syncHero(); }
+    function resumeHero() {
+      if (heroVisible && !manuallyPaused && !reduceMotion.matches && !dialog.open && !musicActive && !document.hidden) {
+        hero.muted = true;
+        hero.play().catch(syncHero);
+      }
+    }
+    function stopMusic() {
+      if (!musicActive) return;
+      player.removeAttribute('src'); player.hidden = true; placeholder.hidden = false; trackExternal.hidden = true;
+      musicStatus.textContent = ''; musicActive = false;
+      document.querySelectorAll('.track').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    }
+    heroPlay.addEventListener('click', () => {
+      if (hero.paused) { manuallyPaused = false; stopMusic(); hero.play().catch(syncHero); }
+      else { manuallyPaused = true; hero.pause(); }
+      syncHero();
+    });
+    heroSound.addEventListener('click', () => {
+      stopMusic(); hero.muted = !hero.muted;
+      if (hero.paused) { manuallyPaused = false; hero.play().catch(syncHero); }
+      syncHero();
+    });
+    ['play','pause','volumechange','error'].forEach(e => hero.addEventListener(e, syncHero));
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; if (heroVisible) resumeHero(); else quietHero(); }, {threshold:.2}).observe(hero);
+    }
+    document.addEventListener('visibilitychange', () => { if (document.hidden) { quietHero(); clipVideo.pause(); } else resumeHero(); });
+    reduceMotion.addEventListener('change', () => { if (reduceMotion.matches) quietHero(); else resumeHero(); });
+    document.querySelectorAll('.clip').forEach(button => button.addEventListener('click', () => {
+      quietHero(); stopMusic(); clipStatus.textContent = '';
+      document.getElementById('clip-title').textContent = button.dataset.title;
+      clipVideo.poster = button.dataset.poster;
+      clipVideo.src = button.dataset.video;
+      clipVideo.setAttribute('aria-label', button.dataset.title + ' live performance clip');
+      dialog.showModal(); document.body.classList.add('modal-open');
+      clipVideo.play().catch(() => { clipStatus.textContent = 'Press play to start the clip.'; });
+    }));
+    document.getElementById('clip-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      const r = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      clipVideo.pause(); clipVideo.removeAttribute('src'); clipVideo.load();
+      document.body.classList.remove('modal-open'); clipStatus.textContent = ''; resumeHero();
+    });
+    clipVideo.addEventListener('error', () => { if (clipVideo.getAttribute('src')) clipStatus.textContent = 'This clip could not load. Please close it and try again.'; });
+    document.querySelectorAll('.track').forEach(button => button.addEventListener('click', () => {
+      quietHero(); musicActive = true;
+      document.querySelectorAll('.track').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      placeholder.hidden = true; player.hidden = false;
+      trackExternal.href = button.dataset.track; trackExternal.hidden = false;
+      musicStatus.textContent = '';
+      player.title = button.dataset.title + ' by Joel Freck on SoundCloud';
+      player.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(button.dataset.track) + '&color=%23ff713d&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false';
+      if (window.matchMedia('(max-width:720px)').matches) document.getElementById('music-player').scrollIntoView({behavior:reduceMotion.matches?'auto':'smooth',block:'center'});
+    }));
+    syncHero();
+  </script>
+</body>
+</html>
