@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101110">
 <title>Joel Freck — House Music DJ & Producer | Halifax, Canada</title>
 <meta name="description" content="Joel Freck is a Canadian house music DJ and producer from Halifax, Nova Scotia. Anjunabeats contest winner, Armada artist, ECMA nominated. Available for bookings across Canada and North America.">
 <meta name="keywords" content="Joel Freck, house music DJ Halifax, Halifax DJ, Halifax house music, Canadian house music DJ, Canadian DJ, house music Canada, tech house DJ Halifax, electronic music Halifax, Nova Scotia DJ, DJ Halifax Nova Scotia, house music Nova Scotia, Canadian electronic music, DJ Canada, house music producer Canada, Anjunabeats, Armada Music">
@@ -47,532 +48,290 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg:#0f0d0b; --bg2:#181410; --bg3:#211c16;
-  --or:#f56a00; --or2:#ff8c3a; --gold:#c8922a;
-  --cream:#f0e6d6; --muted:#8a7d6e; --border:rgba(245,106,0,0.15);
-  --fd:'Barlow Condensed',sans-serif; --fb:'DM Sans',sans-serif;
-  --sp: 28px; /* section padding */
-}
-html { scroll-behavior: smooth; }
-body { background:var(--bg); color:var(--cream); font-family:var(--fb); overflow-x:hidden; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#101110;--paper:#efece4;--orange:#ff713d;--muted:#aaa9a1;--line:#ffffff25;--display:'Barlow Condensed',Impact,sans-serif;--body:'DM Sans',sans-serif;--gutter:clamp(22px,5vw,80px)}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;-webkit-font-smoothing:antialiased}
+    body.modal-open{overflow:hidden}
+    button,a,input{-webkit-tap-highlight-color:transparent}
+    button{font:inherit;cursor:pointer}
+    a{color:inherit;text-decoration:none}
+    button:focus-visible,a:focus-visible,video:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+    img,video{display:block;max-width:100%}
+    img{height:auto}
+    button{color:inherit}
+    svg{display:block;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5}
+    .wrap{width:min(1440px,100%);margin-inline:auto;padding-inline:var(--gutter)}
+    .eyebrow{font-size:11px;line-height:1.6;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+    .skip{position:fixed;left:20px;top:-80px;padding:15px;background:var(--paper);color:var(--ink);z-index:100}
+    .skip:focus{top:20px}
+    .preview-note{display:flex;justify-content:space-between;gap:16px;padding-block:9px;color:#b7b8b0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+    .preview-note a{text-decoration:underline;text-underline-offset:3px}
+    .site-header{border-bottom:1px solid var(--line)}
+    .nav{height:83px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .wordmark{font-family:var(--display);font-size:31px;font-weight:800;line-height:1;letter-spacing:-.03em;white-space:nowrap}
+    .wordmark span{color:var(--orange)}
+    .nav-links{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:500}
+    .nav-links a{padding-block:12px}
+    .nav-links a:hover{color:var(--orange)}
+    .nav-book{display:flex;gap:20px;align-items:center;border:1px solid #ffffff55;padding:12px 17px;min-height:44px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+    .nav-book:hover{background:var(--paper);color:var(--ink)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(30px,7vw,100px);padding-top:48px;padding-bottom:55px;align-items:center}
+    .hero-copy{padding-block:18px}
+    .hero-location{display:flex;align-items:center;gap:12px;margin:0 0 27px}
+    .orange-dot{width:7px;height:7px;display:inline-block;flex:none;background:var(--orange);border-radius:50%}
+    h1{font-family:var(--display);font-size:clamp(118px,15.1vw,224px);line-height:.76;letter-spacing:-.025em;text-transform:uppercase;font-weight:800;margin:0 0 34px}
+    h1 span{display:block}
+    h1 span:last-child{color:var(--orange);margin-top:7px}
+    .hero-description{font-size:clamp(17px,1.65vw,22px);line-height:1.6;max-width:440px;color:#cfcec6;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+    .button{display:inline-flex;justify-content:center;align-items:center;gap:26px;min-height:50px;padding:14px 21px;font-size:12px;font-weight:600;border:1px solid transparent}
+    .button-primary{background:var(--orange);color:var(--ink)}
+    .button-primary:hover{background:#ff8c60}
+    .button-outline{border-color:#ffffff45}
+    .button-outline:hover{border-color:var(--paper)}
+    .hero-footnote{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:33px 0 0}
+    .hero-film{width:min(100%,342px);justify-self:center;position:relative;isolation:isolate;margin:0}
+    .hero-film::before{content:'';position:absolute;inset:13px -13px -13px 13px;border:1px solid #ff713d65;z-index:-1}
+    .hero-film-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
+    .hero-film-top span:first-child{display:flex;align-items:center;gap:8px}
+    .hero-film-frame{position:relative;aspect-ratio:9/16;background:#252623;overflow:hidden}
+    .hero-film video{width:100%;height:100%;object-fit:cover}
+    .hero-film-frame::after{content:'';position:absolute;inset:70% 0 0;background:linear-gradient(transparent,#0009);pointer-events:none}
+    .film-controls{position:absolute;z-index:1;inset:auto 12px 12px;display:flex;justify-content:space-between;gap:8px}
+    .film-controls button{display:flex;align-items:center;gap:8px;min-height:42px;padding:10px 13px;border:1px solid #ffffff55;background:#141514e8;font-size:11px}
+    .film-controls button:hover{background:var(--paper);color:var(--ink)}
+    .film-controls svg{width:15px;height:15px}
+    .hero-film figcaption{font-size:10px;line-height:1.65;color:var(--muted);margin-top:12px;max-width:330px}
+    .credentials{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr)}
+    .credential{padding:27px 30px 29px 0}
+    .credential+.credential{border-left:1px solid var(--line);padding-left:36px}
+    .credential small{display:block;font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:7px}
+    .credential strong{font-family:var(--display);font-size:34px;line-height:1.1;letter-spacing:.025em;text-transform:uppercase;font-weight:600}
+    .section{padding-block:85px}
+    .section-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:32px}
+    .section-index{display:flex;gap:15px;color:var(--muted);margin-bottom:16px}
+    .section-index span{color:var(--orange)}
+    h2{font-family:var(--display);font-size:clamp(58px,7.5vw,104px);font-weight:700;letter-spacing:-.02em;line-height:.91;text-transform:uppercase;margin:0}
+    .section-top p{max-width:365px;color:var(--muted);font-size:14px;line-height:1.75;margin:0 0 3px}
+    .clips{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .clip{display:block;width:100%;padding:0;text-align:left;background:none;border:0}
+    .clip-image{aspect-ratio:16/10;position:relative;overflow:hidden;background:#242523}
+    .clip-image img{width:100%;height:100%;object-fit:cover;transition:transform .35s,filter .35s;filter:saturate(.85)}
+    .clip:hover img{transform:scale(1.035);filter:saturate(1.05)}
+    .clip-play{position:absolute;bottom:16px;left:16px;display:grid;place-items:center;width:43px;height:43px;border:1px solid #ffffff8f;border-radius:50%;background:#15151575;backdrop-filter:blur(8px)}
+    .clip:hover .clip-play{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+    .clip-duration{position:absolute;bottom:26px;right:17px;font-size:10px;letter-spacing:.07em;color:#fff;text-shadow:0 1px 4px #000}
+    .clip-caption{display:flex;justify-content:space-between;align-items:center;padding-top:16px;gap:8px;font-size:13px}
+    .clip-caption span:last-child{font-size:10px;color:var(--muted)}
+    .support-line{margin-top:36px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:22px;align-items:center}
+    .support-line>span{color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase;flex-shrink:0}
+    .support-names{display:flex;flex-wrap:wrap;gap:12px 28px;font-family:var(--display);font-weight:600;font-size:25px;letter-spacing:.025em;text-transform:uppercase}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:center}
+    .about-photo{margin:0;position:relative}
+    .about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 34%}
+    .about-photo figcaption{position:absolute;bottom:15px;left:16px;font-size:10px;background:#181918c9;padding:8px 12px;letter-spacing:.07em;text-transform:uppercase}
+    .about-copy h2{font-size:clamp(56px,5.7vw,80px);margin-bottom:30px}
+    .about-copy p{font-size:14px;line-height:1.85;color:#c4c3bb;margin:0 0 20px}
+    .about-copy p.lead{font-size:20px;line-height:1.6;color:var(--paper)}
+    .about-stats{border-top:1px solid var(--line);margin-top:32px;padding-top:23px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .about-stats strong{display:block;font:700 49px/1 var(--display);color:var(--orange)}
+    .about-stats span{display:block;font-size:11px;color:var(--muted);line-height:1.6;margin-top:8px;max-width:155px}
+    .booking{background:var(--orange);color:var(--ink);padding-block:66px}
+    .booking-inner{display:flex;justify-content:space-between;gap:48px;align-items:center}
+    .booking .eyebrow{margin:0 0 14px}
+    .booking h2{font-size:clamp(68px,8vw,110px)}
+    .booking-right{max-width:340px}
+    .booking-right p{font-size:14px;line-height:1.75;margin:0 0 21px}
+    .booking .button{background:var(--ink);color:var(--paper);width:100%;justify-content:space-between}
+    .booking .button:hover{background:#32352f}
+    .booking-email{display:block;margin-top:14px;font-size:12px;text-align:center;text-decoration:underline;text-underline-offset:4px}
+    .footer{padding-block:28px;display:flex;align-items:center;justify-content:space-between;gap:25px;font-size:11px;color:var(--muted)}
+    .socials{display:flex;gap:20px;flex-wrap:wrap}
+    .socials a:hover{color:var(--paper)}
+    .footer small{font-size:10px}
+    dialog{border:1px solid #ffffff35;padding:0;background:var(--ink);color:var(--paper);width:min(1060px,calc(100% - 32px));max-height:calc(100dvh - 32px);overflow:auto}
+    dialog::backdrop{background:#000e;backdrop-filter:blur(8px)}
+    .dialog-top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:15px 20px;border-bottom:1px solid var(--line)}
+    .dialog-top h2{font:500 15px var(--body);text-transform:none;letter-spacing:0}
+    .dialog-close{background:none;border:1px solid #ffffff40;display:flex;align-items:center;gap:9px;font-size:11px;padding:8px 12px;min-height:40px}
+    .dialog-close:hover{background:var(--paper);color:var(--ink)}
+    dialog video{width:100%;aspect-ratio:16/9;max-height:75dvh;background:#000;object-fit:contain}
+    .media-status{font-size:12px;line-height:1.5;margin:0;padding:10px 20px;color:var(--muted)}
+    .media-status:empty{display:none}
+    @media(min-width:1600px){.hero{padding-top:58px;padding-bottom:65px}.hero-film{width:360px}}
+    @media(min-width:721px) and (max-height:800px){.hero{padding-top:30px;padding-bottom:35px}.hero-film{width:280px}.hero-copy{padding-block:0}h1{font-size:clamp(112px,12vw,176px);margin-bottom:26px}.hero-location{margin-bottom:20px}.hero-footnote{margin-top:24px}}
+    @media(max-width:1000px){.nav-links{gap:20px}.hero{gap:40px;grid-template-columns:minmax(0,1fr) minmax(270px,.85fr)}h1{font-size:clamp(112px,16vw,164px)}.hero-description{font-size:17px}.hero-actions{gap:10px}.button{gap:18px;padding-inline:17px}.credentials .credential{padding-left:20px}.credentials .credential:first-child{padding-left:0}.credential strong{font-size:28px}.music-grid{gap:35px}.about{gap:40px}}
+    @media(max-width:720px){html{scroll-padding-top:20px}.preview-note{font-size:9px}.nav{height:70px;gap:12px}.nav-links{display:none}.wordmark{font-size:28px}.nav-book{font-size:10px;padding:10px 12px;gap:12px}.hero{grid-template-columns:1fr;padding-top:35px;padding-bottom:40px;gap:38px}.hero-copy{padding:0}.hero-location{font-size:10px;margin-bottom:25px}h1{font-size:clamp(108px,27vw,180px);line-height:.78;margin-bottom:27px}.hero-description{max-width:440px;font-size:17px}.hero-actions{margin-top:22px}.hero-footnote{margin-top:24px;font-size:9px}.hero-film{width:min(100%,310px)}.credentials{grid-template-columns:1fr}.credential,.credentials .credential,.credentials .credential:first-child{padding:19px 0;display:flex;align-items:center;justify-content:space-between;gap:15px}.credential+.credential{border-left:0;border-top:1px solid var(--line)}.credential small{font-size:9px;margin:0;max-width:140px}.credential strong{font-size:26px;text-align:right}.section{padding-block:53px}.section-top{display:block;margin-bottom:26px}.section-top p{margin-top:20px;font-size:13px}.section-index{font-size:10px;margin-bottom:13px}h2{font-size:65px}.clips{grid-template-columns:1fr;gap:28px}.clip-image{aspect-ratio:16/9}.clip-caption{padding-top:12px}.support-line{display:block;margin-top:29px}.support-names{margin-top:15px;gap:8px 20px;font-size:23px}.music-grid{grid-template-columns:1fr;gap:24px;margin-top:30px}.music-art{aspect-ratio:1.2/1}.art-bottom strong{font-size:63px}.music-player{min-height:0}.track{padding-block:19px}.track-name{font-size:17px}.music-links{font-size:11px}.about{grid-template-columns:1fr;gap:32px}.about-photo img{aspect-ratio:1/1;object-position:center 32%}.about-copy h2{font-size:62px;margin-bottom:23px}.about-copy p.lead{font-size:18px}.about-copy p{font-size:13px}.about-stats{margin-top:25px}.booking{padding-block:50px}.booking-inner{display:block}.booking h2{font-size:76px}.booking-right{margin-top:28px;max-width:none}.booking-right p{font-size:13px}.booking .button{max-width:420px}.booking-email{text-align:left;margin-top:19px}.footer{display:block;padding-block:25px}.socials{gap:16px;margin-bottom:22px}.footer small{line-height:1.8}.dialog-top{padding:12px}.dialog-top h2{font-size:13px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
-/* ── NAV ── */
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:100;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:0 44px; height:60px;
-  background:rgba(15,13,11,0.92); backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-}
-.nav-logo { font-family:var(--fd); font-size:1.25rem; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:var(--cream); text-decoration:none; }
-.nav-logo em { color:var(--or); font-style:normal; }
-.nav-center { display:flex; gap:32px; list-style:none; }
-.nav-center a { font-size:0.7rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color 0.2s; }
-.nav-center a:hover { color:var(--or); }
-.nav-right { display:flex; align-items:center; gap:16px; }
-.nav-icon { color:var(--muted); text-decoration:none; display:flex; transition:color 0.2s; }
-.nav-icon:hover { color:var(--or); }
-.nav-icon svg { width:16px; height:16px; fill:currentColor; }
-.nav-contact-btn { font-size:0.68rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); background:var(--or); padding:8px 20px; border-radius:2px; text-decoration:none; transition:background 0.2s; white-space:nowrap; cursor:pointer; border:none; font-family:var(--fb); }
-.nav-contact-btn:hover { background:var(--or2); }
+    /* Second direction: the original site body, a performance-led opening. */
+    :root{--bg:var(--ink);--bg2:#161716;--bg3:#20211f;--or:var(--orange);--or2:#ff946d;--cream:var(--paper);--border:var(--line);--fd:var(--display);--fb:var(--body)}
+    .hero{grid-template-columns:minmax(250px,1.15fr) minmax(240px,1fr) minmax(230px,.78fr);gap:32px;padding-block:42px;align-items:center}
+    .hero-copy{padding:0}.hero h1{font-size:clamp(76px,8vw,112px);line-height:.85;margin-bottom:25px}
+    .hero-description{font-size:18px}.hero-actions{gap:10px}.hero-actions .button{padding:13px 16px;gap:12px}
+    .hero-footnote{font-size:9px;line-height:1.8;margin-top:23px}
+    .hero-portrait{margin:0;align-self:center;min-width:0}.hero-portrait img{width:100%;height:365px;object-fit:cover;object-position:57% center}
+    .hero-portrait figcaption{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-top:14px}
+    .hero-portrait figcaption span{font-size:10px;color:var(--muted)}
+    .hero-film{width:100%;max-width:270px}.hero-film::before{display:none}
+    .hero-film-frame{background:#191a18}.hero-film figcaption{font-size:10px}
+    .section{padding-block:58px}#live h2{font-size:clamp(54px,5.5vw,76px)}
+    .credential{padding-block:20px}.credential strong{font-size:28px}
+    .about{align-items:stretch;gap:55px}.about-photo{min-height:360px}
+    .about-photo img{position:absolute;inset:0;height:100%;width:100%;object-fit:cover;object-position:center 25%;aspect-ratio:auto}
+    .about-copy{padding-block:12px}.about-copy h2{font-size:66px;margin:0 0 24px}
+    .about-copy p{font-size:15px;line-height:1.85;margin:0 0 16px}.about-copy p:last-child{margin-bottom:0}.about-copy strong{color:var(--paper);font-weight:500}
+    .legacy-section{padding-block:34px}.legacy-section h2{font-size:clamp(38px,4vw,54px);margin:0}
+    .legacy-section .slabel{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:12px}
+    .music-hd{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.music-hd .section-index{margin-bottom:10px}
+    .text-link{font-size:12px;display:inline-block;border-bottom:1px solid currentColor;padding-bottom:4px}.text-link:hover{color:var(--orange)}
+    #music,#residency{background:var(--bg2)}
+    .music-player{margin-bottom:18px}.music-player iframe{width:100%;height:166px;display:block;border:0}.music-player [hidden]{display:none}
+    .player-placeholder,#music-status{font-size:12px;color:var(--muted);margin:0;line-height:1.6}#music-status:empty{display:none}
+    .track-external{display:block;font-size:11px;color:var(--muted);margin-top:10px;text-decoration:underline;text-underline-offset:3px}
+    .sc-wrap{position:relative;padding-inline:26px}.sc-viewport{overflow-x:auto;scrollbar-width:none;scroll-snap-type:x mandatory}.sc-viewport::-webkit-scrollbar{display:none}
+    .sc-track{display:flex;gap:14px;width:max-content;padding:5px 0}.sc-card{display:block;width:190px;flex:none;padding:0;border:1px solid var(--line);border-radius:2px;background:var(--ink);text-align:left;scroll-snap-align:start}
+    .sc-card:hover,.sc-card[aria-pressed="true"]{border-color:var(--orange)}.sc-card:focus-visible{outline-offset:1px}
+    .sc-art-wrap{display:block;height:188px;position:relative;overflow:hidden;background:var(--bg3)}.sc-art-wrap img{width:100%;height:100%;object-fit:cover}
+    .art-placeholder{height:100%;display:grid;place-items:center;font:700 65px var(--display);color:var(--orange)}
+    .sc-play-btn{position:absolute;right:10px;bottom:10px;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:12px;background:var(--orange);color:var(--ink)}
+    .sc-info{display:block;padding:10px 11px 13px}.sc-title{display:block;font-size:12px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sc-meta{display:block;font-size:10px;color:var(--muted);margin-top:5px}
+    .sc-arrow{position:absolute;top:80px;z-index:2;width:34px;height:40px;border:1px solid var(--line);background:var(--bg2);color:var(--paper);font-size:19px}.sc-arrow-l{left:0}.sc-arrow-r{right:0}.sc-arrow:disabled{opacity:.3;cursor:default}
+    .stream-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.stream-card{border:1px solid var(--line);overflow:hidden;border-radius:2px;background:var(--bg2)}
+    .stream-card-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line)}
+    .stream-label{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}.stream-label svg{width:16px;height:16px;fill:currentColor;stroke:none}.stream-open{font-size:10px;color:var(--orange)}
+    .stream-embed{width:100%;height:352px;border:0;display:block}
+    .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch}
+    .res-venue{font:800 clamp(48px,5vw,68px)/.92 var(--display);text-transform:uppercase;margin:0 0 20px}.res-venue em{font-style:normal;color:var(--orange)}
+    .res-body{font-size:16px;line-height:1.85;color:#c4c3bb;max-width:440px;margin:0}.res-body strong{font-weight:500;color:var(--paper)}
+    .res-cta{display:inline-block;font-size:12px;color:var(--orange);margin-top:22px;border-bottom:1px solid currentColor;padding-bottom:4px}
+    .res-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;min-height:335px}
+    .res-photo{position:relative;overflow:hidden;background:var(--bg3)}.res-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.res-photo:nth-child(3){grid-column:1/3}
+    #gram{padding-block:40px;overflow:hidden}.gram-note{font-size:12px;color:var(--muted);line-height:1.7;margin:20px 0 0}.gram-note a{text-decoration:underline}
+    .booking{padding-block:46px}.booking h2{font-size:clamp(62px,7vw,90px)}
+    @media(min-width:1600px){.hero-film{max-width:290px}.hero-portrait img{height:415px}}
+    @media(max-width:1100px){.hero{grid-template-columns:1fr 1fr;gap:26px}.hero-copy{grid-column:1/-1}.hero h1{font-size:80px;line-height:.85;margin-bottom:18px}.hero h1 span{display:inline}.hero h1 span+span{margin-left:12px}.hero-location{margin-bottom:18px}.hero-description{max-width:600px}.hero-footnote{margin-top:18px}.hero-film{max-width:260px}.hero-portrait{max-width:440px;justify-self:center;width:100%}.hero-portrait img{height:350px}}
+    @media(max-width:720px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px 14px;padding-block:28px}.hero-copy{grid-column:1/-1}.hero h1{font-size:clamp(65px,16vw,90px)}.hero-description{font-size:16px}.hero-actions{margin-top:20px}.hero-portrait img{height:auto;aspect-ratio:4/5;object-position:56% center}.hero-portrait figcaption{display:block;font-size:11px;line-height:1.7}.hero-portrait figcaption span{display:block}.hero-film{max-width:none}.hero-film-top{font-size:8px;letter-spacing:.05em;gap:5px}.hero-film-top .orange-dot{display:none}.film-controls{position:static;display:flex;gap:4px;background:#161716;padding:6px 0}.film-controls button{padding:8px 6px;font-size:10px;min-height:40px;justify-content:center;flex:1}.film-controls svg{display:none}.hero-film-frame{aspect-ratio:auto;overflow:visible}.hero-film video{aspect-ratio:9/16;height:auto}.hero-film-frame::after{display:none}.hero-film figcaption{font-size:9px}.section{padding-block:38px}.about{gap:27px}.about-photo{min-height:0;aspect-ratio:4/3}.about-copy h2{font-size:55px}.about-copy p{font-size:14px}.legacy-section{padding-block:28px}.legacy-section h2{font-size:40px}.music-hd{align-items:center}.stream-grid{grid-template-columns:1fr}.stream-embed{height:352px}.res-grid{grid-template-columns:1fr;gap:28px}.res-collage{min-height:330px}.res-body{font-size:14px}.booking h2{font-size:66px}.sc-wrap{padding-inline:18px}.music-player{margin-bottom:14px}}
 
-/* ── HERO ── */
-#home { padding-top:60px; display:grid; grid-template-columns:1fr 1fr; position:relative; overflow:hidden; max-width:1400px; margin-left:auto; margin-right:auto; }
-.hero-atm { position:absolute; inset:0; pointer-events:none; background: radial-gradient(ellipse 70% 60% at 15% 85%, rgba(245,106,0,0.09) 0%, transparent 60%), radial-gradient(ellipse 40% 50% at 60% 15%, rgba(200,146,42,0.06) 0%, transparent 65%); }
-.hero-lines { position:absolute; inset:0; pointer-events:none; opacity:0.5; overflow:hidden; }
-.hero-lines svg { width:100%; height:100%; }
-.hero-left { display:flex; flex-direction:column; justify-content:center; padding:72px 32px 72px 52px; position:relative; z-index:2; min-height:0; }
-.hero-right { position:relative; overflow:hidden; align-self:stretch; background:var(--bg3); display:flex; align-items:center; justify-content:center; }
-.hero-right::after { content:''; position:absolute; inset:0; background:linear-gradient(to right, var(--bg) 0%, transparent 12%), linear-gradient(to top, rgba(15,13,11,0.4) 0%, transparent 25%); }
-.hero-photo { width:100%; height:100%; object-fit:contain; object-position:center top; filter:brightness(0.88) contrast(1.05) saturate(0.95); display:block; }
-.hero-eyebrow { font-size:0.62rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--or); display:flex; align-items:center; gap:12px; margin-bottom:14px; }
-.hero-eyebrow::before { content:''; display:block; width:26px; height:1px; background:var(--or); }
-.hero-name { font-family:var(--fd); font-size:clamp(5rem,10vw,9.5rem); font-weight:900; line-height:0.86; text-transform:uppercase; letter-spacing:-0.01em; color:var(--cream); }
-.hero-name em { color:var(--or); font-style:normal; display:block; }
-.hero-sub { margin-top:20px; font-size:1rem; font-weight:300; font-style:italic; color:var(--muted); line-height:1.65; max-width:340px; }
-.hero-ctas { margin-top:28px; display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-.btn-p { font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); background:var(--or); padding:13px 28px; border-radius:2px; text-decoration:none; transition:background 0.2s; }
-.btn-p:hover { background:var(--or2); }
-.btn-g { font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--cream); border:1px solid rgba(240,230,214,0.2); padding:13px 28px; border-radius:2px; text-decoration:none; transition:border-color 0.2s, color 0.2s; cursor:pointer; background:none; font-family:var(--fb); }
-.btn-g:hover { border-color:var(--or); color:var(--or); }
-.scroll-cue { display:none; }
 
-
-/* ── MORE LIVE CLIPS ── */
-.live-more { max-width:1100px; margin:44px auto 0; }
-.live-more-label { color:var(--or); font-size:0.65rem; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:14px; }
-.live-clips { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
-.live-clip { min-width:0; }
-.live-clip video { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--bg3); border:1px solid var(--border); }
-.live-clip figcaption { margin-top:8px; color:var(--muted); font-size:0.7rem; letter-spacing:0.04em; }
-@media (max-width:800px) { .live-clips { grid-template-columns:1fr; gap:22px; } .live-more { margin-top:36px; } }
-/* ── ABOUT ── */
-#about { padding:var(--sp) 44px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:stretch; background:var(--bg2); position:relative; overflow:hidden; }
-#about::before { content:''; position:absolute; top:-40%; right:-15%; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(245,106,0,0.06) 0%, transparent 70%); pointer-events:none; }
-.about-frame { height:100%; min-height:280px; background:var(--bg3); border:1px solid var(--border); overflow:hidden; position:relative; }
-.about-frame img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block; }
-.about-corner { position:absolute; top:-12px; right:-12px; width:44px; height:44px; border-top:1.5px solid var(--or); border-right:1.5px solid var(--or); opacity:0.4; }
-.about-wrap { position:relative; display:flex; flex-direction:column; }
-.slabel { font-size:0.62rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--or); display:flex; align-items:center; gap:12px; margin-bottom:14px; }
-.slabel::after { content:''; width:32px; height:1px; background:var(--or); opacity:0.5; }
-.stitle { font-family:var(--fd); font-size:clamp(2.5rem,5vw,4.5rem); font-weight:900; text-transform:uppercase; line-height:0.9; letter-spacing:0.02em; color:var(--cream); }
-.abody { margin-top:20px; font-size:0.97rem; font-weight:300; line-height:1.8; color:var(--muted); max-width:420px; }
-.abody p+p { margin-top:12px; }
-.abody strong { color:var(--cream); font-weight:400; }
-.tags { margin-top:20px; display:flex; gap:8px; flex-wrap:wrap; }
-.tag { font-size:0.62rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--or); border:1px solid var(--border); padding:5px 13px; border-radius:2px; }
-
-/* ── INSTAGRAM ── */
-#gram { padding:var(--sp) 44px; background:var(--bg); }
-.gram-hd { display:flex; justify-content:flex-end; margin-bottom:16px; }
-.gram-lnk { font-size:0.68rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--or); text-decoration:none; display:flex; align-items:center; gap:6px; transition:gap 0.2s; }
-.gram-lnk:hover { gap:10px; }
-.gram-outer { overflow:hidden; position:relative; }
-.gram-outer::after { content:''; position:absolute; top:0; right:0; bottom:0; width:80px; background:linear-gradient(to right, transparent, var(--bg)); pointer-events:none; z-index:2; }
-.gram-track { display:flex; gap:10px; animation:slide 30s linear infinite; width:max-content; }
-.gram-track:hover { animation-play-state:paused; }
-@keyframes slide { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-.gram-card { width:200px; height:200px; flex-shrink:0; background:var(--bg3); border:1px solid var(--border); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--muted); font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; position:relative; overflow:hidden; cursor:pointer; transition:border-color 0.25s; }
-.gram-card:hover { border-color:rgba(245,106,0,0.4); }
-.gram-note { margin-top:12px; font-size:0.75rem; font-weight:300; font-style:italic; color:var(--muted); text-align:center; }
-.gram-note a { color:var(--or); text-decoration:none; }
-
-/* ── MUSIC ── */
-#music { padding:var(--sp) 44px; background:var(--bg2); position:relative; overflow:hidden; }
-#music::before { content:''; position:absolute; bottom:-25%; left:-10%; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(200,146,42,0.06) 0%, transparent 70%); pointer-events:none; }
-.music-hd { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px; flex-wrap:wrap; gap:16px; }
-
-/* Now playing bar */
-.now-bar { display:none; margin-bottom:20px; padding:16px 24px; background:var(--bg3); border:1px solid var(--border); border-radius:2px; flex-direction:column; align-items:center; gap:12px; }
-.now-bar.on { display:flex; }
-.now-dot { width:8px; height:8px; border-radius:50%; background:var(--or); flex-shrink:0; animation:pulse 1s ease-in-out infinite; }
-.now-top { display:flex; align-items:center; gap:10px; width:100%; justify-content:center; }
-.now-label { font-size:0.85rem; font-weight:400; color:var(--cream); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:400px; text-align:center; }
-.now-controls { display:flex; align-items:center; gap:14px; }
-.now-btn { background:none; border:1px solid var(--border); border-radius:50%; width:38px; height:38px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--cream); transition:border-color 0.2s, color 0.2s; }
-.now-btn:hover { border-color:var(--or); color:var(--or); }
-.now-btn svg { width:14px; height:14px; fill:currentColor; }
-.now-btn.play-pause { width:46px; height:46px; background:var(--or); border-color:var(--or); }
-.now-btn.play-pause:hover { background:var(--or2); border-color:var(--or2); }
-.now-btn.play-pause svg { width:16px; height:16px; fill:var(--bg); margin-left:2px; }
-.now-btn.play-pause.paused svg { margin-left:0; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
-
-/* SC carousel */
-.sc-wrap { position:relative; padding:0 28px; }
-.sc-viewport { overflow:hidden; }
-.sc-track { display:flex; gap:14px; transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); width:max-content; }
-.sc-card { width:190px; flex-shrink:0; background:var(--bg); border:1px solid var(--border); border-radius:2px; overflow:hidden; cursor:pointer; position:relative; transition:border-color 0.25s; }
-.sc-card:hover { border-color:rgba(245,106,0,0.5); }
-.sc-card.playing { border-color:var(--or); }
-.sc-art-wrap { width:190px; height:190px; position:relative; overflow:hidden; background:var(--bg3); }
-.sc-art-wrap img { width:100%;height:100%;object-fit:cover;display:block; }
-.sc-play-btn { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.4); opacity:0; transition:opacity 0.2s; }
-.sc-card:hover .sc-play-btn,.sc-card.playing .sc-play-btn { opacity:1; }
-.sc-play-icon { width:46px; height:46px; border-radius:50%; background:var(--or); display:flex; align-items:center; justify-content:center; }
-.sc-card.playing .sc-play-icon { background:var(--cream); }
-.sc-play-icon svg { width:18px; height:18px; fill:var(--cream); margin-left:3px; }
-.sc-card.playing .sc-play-icon svg { fill:var(--or); }
-.sc-info { padding:9px 11px 12px; }
-.sc-title { font-size:0.73rem; font-weight:500; color:var(--cream); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; margin-bottom:2px; }
-.sc-meta { font-size:0.6rem; font-weight:300; color:var(--muted); }
-.sc-arrow { position:absolute; top:95px; z-index:3; width:36px; height:36px; border-radius:50%; background:var(--bg2); border:1px solid var(--border); color:var(--cream); font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s,border-color 0.2s; }
-.sc-arrow:hover:not(:disabled) { background:var(--bg3); border-color:var(--or); color:var(--or); }
-.sc-arrow:disabled { opacity:0.25; cursor:default; }
-.sc-arrow-l { left:0; }
-.sc-arrow-r { right:0; }
-
-/* ── STREAMING ── */
-#streaming { padding:var(--sp) 44px; background:var(--bg); }
-.stream-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:20px; }
-.stream-card { background:var(--bg2); border:1px solid var(--border); border-radius:2px; overflow:hidden; }
-.stream-card-header { display:flex; align-items:center; justify-content:space-between; padding:14px 18px; border-bottom:1px solid var(--border); }
-.stream-label { display:flex; align-items:center; gap:10px; font-size:0.7rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--cream); }
-.stream-label svg { width:16px; height:16px; fill:currentColor; }
-.stream-open { font-size:0.6rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--or); text-decoration:none; transition:opacity 0.2s; }
-.stream-open:hover { opacity:0.6; }
-.stream-embed { width:100%; display:block; border:none; }
-
-/* ── CONTACT MODAL ── */
-.modal-bg { display:none; position:fixed; inset:0; z-index:200; background:rgba(10,8,6,0.88); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:20px; }
-.modal-bg.on { display:flex; }
-.modal { background:var(--bg2); border:1px solid var(--border); border-radius:2px; width:100%; max-width:520px; padding:40px; position:relative; }
-.modal-close { position:absolute; top:16px; right:20px; background:none; border:none; color:var(--muted); cursor:pointer; font-size:1.2rem; line-height:1; }
-.modal-close:hover { color:var(--cream); }
-.modal h2 { font-family:var(--fd); font-size:2.2rem; font-weight:900; text-transform:uppercase; color:var(--cream); margin-bottom:6px; }
-.modal p { font-size:0.85rem; font-weight:300; color:var(--muted); margin-bottom:24px; }
-.modal p a { color:var(--or); text-decoration:none; }
-.mform { display:flex; flex-direction:column; gap:14px; }
-.mfg { display:flex; flex-direction:column; gap:6px; }
-.mfg label { font-size:0.6rem; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); }
-.mfg input,.mfg textarea { background:var(--bg3); border:1px solid var(--border); color:var(--cream); font-family:var(--fb); font-size:0.93rem; font-weight:300; padding:12px 14px; border-radius:2px; outline:none; transition:border-color 0.2s; width:100%; }
-.mfg input::placeholder,.mfg textarea::placeholder { color:rgba(138,125,110,0.4); }
-.mfg input:focus,.mfg textarea:focus { border-color:rgba(245,106,0,0.45); }
-.mfg textarea { resize:vertical; min-height:110px; line-height:1.6; }
-.mrow { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.msbtn { font-family:var(--fb); font-size:0.72rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--bg); background:var(--or); border:none; padding:14px 28px; border-radius:2px; cursor:pointer; transition:background 0.2s; width:100%; margin-top:4px; }
-.msbtn:hover { background:var(--or2); }
-.modal-ok { display:none; text-align:center; padding:20px 0; }
-.modal-ok p { color:var(--cream); font-size:1rem; font-weight:300; }
-.modal-ok strong { color:var(--or); }
-
-/* ── FOOTER ── */
-footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 44px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-.flogo { font-family:var(--fd); font-size:1.1rem; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:var(--cream); }
-.flogo em { color:var(--or); font-style:normal; }
-.flinks { display:flex; gap:18px; flex-wrap:wrap; }
-.flinks a { font-size:0.62rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color 0.2s; }
-.flinks a:hover { color:var(--or); }
-.fcopy { font-size:0.62rem; color:var(--muted); }
-
-/* ── RESIDENCY ── */
-#residency { padding:var(--sp) 44px; background:var(--bg2); position:relative; overflow:hidden; }
-#residency::before { content:''; position:absolute; top:-30%; right:-10%; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(245,106,0,0.07) 0%, transparent 70%); pointer-events:none; }
-.res-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:stretch; margin-top:0; }
-.res-info {}
-.res-venue { font-family:var(--fd); font-size:clamp(2.8rem,4.5vw,4.8rem); font-weight:900; text-transform:uppercase; line-height:0.92; color:var(--cream); margin-bottom:16px; }
-.res-venue em { color:var(--or); font-style:normal; }
-.res-nights { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
-.res-night { font-size:0.72rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--bg); background:var(--or); padding:7px 18px; border-radius:2px; }
-.res-body { font-size:1.05rem; font-weight:300; line-height:1.8; color:var(--muted); max-width:420px; }
-.res-body strong { color:var(--cream); font-weight:400; }
-.res-cta { display:inline-flex; align-items:center; gap:8px; margin-top:24px; font-size:0.72rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); background:var(--or); padding:12px 24px; border-radius:2px; text-decoration:none; transition:background 0.2s; }
-.res-cta:hover { background:var(--or2); }
-
-/* Photo collage */
-.res-collage { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:8px; height:100%; }
-.res-photo { background:var(--bg3); border:1px solid var(--border); overflow:hidden; position:relative; min-height:0; }
-.res-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.85) contrast(1.05); }
-.res-photo-ph { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--muted); font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; padding:20px; text-align:center; }
-.res-photo:nth-child(1) { grid-column:1/2; }
-.res-photo:nth-child(2) { grid-column:2/3; }
-.res-photo:nth-child(3) { grid-column:1/3; }
-
-/* ── LARGE SCREEN (1400px+) ── */
-@media (min-width:1400px) {
-  .hero-name { font-size:7rem; }
-  .hero-sub { font-size:1.15rem; max-width:400px; }
-  .stitle { font-size:3.8rem; }
-  .abody { font-size:1.1rem; max-width:480px; }
-  .res-venue { font-size:4.5rem; }
-  .res-body { font-size:1.2rem; }
-  .res-night { font-size:0.75rem; padding:7px 18px; }
-  #about { padding:32px 60px; }
-  #residency { padding:32px 60px; }
-  #music { padding:32px 60px; }
-  #streaming { padding:32px 60px; }
-  #gram { padding:24px 60px; }
-}
-
-/* ── MEDIUM-LARGE (1100px-1400px) ── */
-@media (min-width:1100px) and (max-width:1399px) {
-  .stitle { font-size:3.2rem; }
-  .abody { font-size:1.05rem; }
-  .res-venue { font-size:3.8rem; }
-  .res-body { font-size:1.15rem; }
-}
-
-/* ── MOBILE FIXES ── */
-@media (max-width:900px) {
-  #gram .ft { min-height:320px; }
-  #gram iframe { max-width:100%; }
-  nav { padding:0 16px; }
-  .nav-center { display:none; }
-  .nav-right { gap:10px; }
-  .nav-icon svg { width:18px; height:18px; }
-  #home { grid-template-columns:1fr 1fr; min-height:auto; }
-  .hero-left { padding:20px 12px 24px 20px; align-items:flex-start; text-align:left; justify-content:center; }
-  .hero-eyebrow { justify-content:flex-start; font-size:0.5rem; }
-  .hero-eyebrow::before { display:block; width:14px; }
-  .hero-name { text-align:left; font-size:clamp(2.6rem,11vw,5rem); }
-  .hero-sub { text-align:left; max-width:100%; font-size:0.78rem; }
-  .hero-ctas { justify-content:flex-start; gap:8px; }
-  .hero-ctas .btn-p, .hero-ctas .btn-g { padding:10px 14px; font-size:0.6rem; }
-  .hero-right { height:auto; min-height:240px; order:1; }
-  .hero-right::after { background:linear-gradient(to right, var(--bg) 0%, transparent 20%), linear-gradient(to top, rgba(15,13,11,0.4) 0%, transparent 30%); }
-  #about { grid-template-columns:1fr; padding:var(--sp) 24px; gap:24px; }
-  .about-wrap:first-child { display:none; }
-  #gram { padding:var(--sp) 20px; }
-  #music { padding:var(--sp) 20px; }
-  .sc-wrap { padding:0 28px; }
-  #streaming { padding:var(--sp) 20px; }
-  .stream-grid { grid-template-columns:1fr; }
-  #residency { padding:var(--sp) 24px; }
-  .res-grid { grid-template-columns:1fr; gap:32px; }
-  .res-info { order:1; }
-  .res-collage { order:2; min-height:400px; }
-  .res-photo { min-height:120px; }
-  footer { padding:24px 20px; flex-direction:column; align-items:flex-start; gap:16px; }
-  .modal { padding:28px 20px; }
-  .mrow { grid-template-columns:1fr; }
-}
-
-/* ── LIVE FOOTAGE ── */
-#live { padding:52px 44px 64px; background:var(--bg); border-top:1px solid var(--border); }
-.live-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,340px); align-items:center; gap:clamp(32px,6vw,90px); }
-.live-copy .stitle { font-size:clamp(3.3rem,6vw,6rem); }
-.live-copy .stitle em { color:var(--or); font-style:normal; }
-.live-copy p { margin-top:24px; max-width:500px; color:var(--muted); font-size:1rem; line-height:1.8; font-weight:300; }
-.live-kicker { display:block; margin-top:28px; color:var(--or2); font-size:0.66rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; }
-.live-main { position:relative; width:100%; aspect-ratio:9/16; overflow:hidden; background:var(--bg3); border:1px solid var(--border); box-shadow:0 22px 60px rgba(0,0,0,0.4); }
-.live-main video { display:block; width:100%; height:100%; object-fit:cover; }
-.live-controls { position:absolute; z-index:2; right:12px; bottom:12px; display:flex; gap:8px; }
-.live-controls button { background:rgba(15,13,11,0.88); border:1px solid rgba(240,230,214,0.4); color:var(--cream); padding:10px 12px; min-height:42px; font:500 0.68rem var(--fb); letter-spacing:0.05em; cursor:pointer; }
-.live-controls button:hover,.live-controls button:focus-visible { border-color:var(--or); color:var(--or2); }
-.live-controls button:focus-visible { outline:2px solid var(--or); outline-offset:2px; }
-@media (max-width:800px) { #live { padding:40px 20px 48px; } .live-inner { grid-template-columns:1fr; gap:28px; } .live-copy .stitle { font-size:clamp(3.1rem,13vw,5rem); } .live-copy p { margin-top:16px; } .live-main { width:min(100%,330px); margin:0 auto; } }
-</style>
+    /* Keep the portrait and all performance footage together. */
+    .hero{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:48px;padding-block:26px 12px}
+    .hero-copy{grid-column:auto}
+    .hero-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;align-items:start;width:100%;justify-self:end}
+    .hero-media .hero-portrait,.hero-media .hero-film{width:100%;max-width:none;margin:0;align-self:start}
+    .hero-media .hero-film-top{height:16px;margin:0 0 10px;font-size:9px;letter-spacing:.06em}
+    .hero-media .hero-film-top .orange-dot{display:none}
+    .hero-media .hero-portrait img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;object-position:53% center}
+    .hero-media .hero-film-frame{aspect-ratio:9/16;overflow:hidden}
+    .hero-media .hero-film video{height:100%;aspect-ratio:9/16;object-fit:cover}
+    .hero-media-caption{grid-column:1/-1;margin:0;color:var(--muted);font-size:10px;line-height:1.6}
+    .hero-media .film-controls{position:absolute;inset:auto 8px 8px;padding:0;gap:5px;background:none}
+    .hero-media .film-controls button{font-size:10px;padding:8px 9px;min-height:40px}
+    .hero-media .film-controls svg{display:none}
+    #live{padding-top:18px;padding-bottom:28px}
+    #live .section-top{margin:0 0 18px;display:block;border-top:1px solid var(--line);padding-top:18px}
+    #live h2{font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:0}
+    #live .clip-image{aspect-ratio:16/9}
+    #live .support-line{margin-top:22px;padding-top:18px}
+    #about{padding-block:32px 24px}
+    .credentials-after-about{padding-bottom:30px}
+    .credentials-after-about .credential{padding:14px 20px}
+    .credentials-after-about .credential:first-child{padding-left:0}
+    .credentials-after-about .credential small{font-size:9px;letter-spacing:.07em;line-height:1.5;margin-bottom:5px}
+    .credentials-after-about .credential strong{font-size:23px}
+    @media(max-width:1100px) and (min-width:721px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,430px);gap:28px}.hero h1 span{display:block}.hero h1 span+span{margin-left:0}.hero h1{font-size:80px}.hero-description{font-size:16px}.hero-actions{flex-direction:column;align-items:start}}
+    @media(max-width:720px){.hero{grid-template-columns:1fr;gap:20px;padding-block:22px 8px}.hero-copy{grid-column:auto}.hero-media{max-width:400px;justify-self:center;gap:9px 12px}.hero-media .hero-film-top{font-size:8px;letter-spacing:0}.hero-media .hero-portrait .hero-film-top span:last-child{display:none}.hero-media .film-controls{inset:auto 5px 5px}.hero-media .film-controls button{padding:7px 4px;min-height:40px}.hero-media-caption{font-size:10px}#live{padding-block:12px 24px}#live .section-top{padding-top:14px;margin-bottom:16px}#live h2{font-size:30px}.credentials-after-about .credential,.credentials-after-about .credential:first-child{padding:12px 0}.credentials-after-about .credential small{margin:0;max-width:160px}.credentials-after-about .credential strong{font-size:21px}.credentials-after-about{padding-bottom:24px}}
+  </style>
 </head>
 <body>
-
-<!-- CONTACT MODAL -->
-<div class="modal-bg" id="modalBg" onclick="closeModal(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModalDirect()">✕</button>
-    <h2>Get in Touch</h2>
-    <p>Bookings, collabs, press — or email directly at <a href="mailto:joel.freck@gmail.com">joel.freck@gmail.com</a></p>
-    <form class="mform" id="contactForm" onsubmit="sendMsg(event)">
-      <div class="mrow">
-        <div class="mfg"><label>First name</label><input type="text" name="fname" placeholder="Your name" required></div>
-        <div class="mfg"><label>Last name</label><input type="text" name="lname" placeholder="Last name"></div>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="wordmark" href="#main" aria-label="Joel Freck home">JOEL<span>.</span>FRECK</a>
+      <div class="nav-links"><a href="#live">Live</a><a href="#music">Music</a><a href="#about">About</a><a href="#residency">Residency</a></div>
+      <a class="nav-book" href="#booking">Bookings <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="artist-name">
+      <div class="hero-copy">
+        <p class="eyebrow hero-location"><span class="orange-dot"></span>House music / Halifax, Canada</p>
+        <h1 id="artist-name"><span>Joel</span><span>Freck</span></h1>
+        <p class="hero-description">Current records, deeper cuts and original remixes. House music with range.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#music">Explore the music <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+          <a class="button button-outline" href="#booking">Get in touch <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 14 10M5 10h9v9"/></svg></a>
+        </div>
+        <p class="hero-footnote">DJ / Producer / Armada &amp; Anjunabeats releases</p>
       </div>
-      <div class="mfg"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
-      <div class="mfg"><label>Message</label><textarea name="message" placeholder="What's up?" required></textarea></div>
-      <button type="submit" class="msbtn">Send →</button>
-    </form>
-    <div class="modal-ok" id="modalOk">
-      <p>Done! Joel will get back to you soon.<br><strong>joel.freck@gmail.com</strong></p>
-    </div>
-  </div>
-</div>
-
-<!-- NAV -->
-<nav>
-  <a href="#home" class="nav-logo">Joel<em>.</em>Freck</a>
-  <ul class="nav-center">
-    <li><a href="#live">Live</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#residency">Residency</a></li>
-    <li><a href="#music">Music</a></li>
-    <li><a href="#streaming">Streaming</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="https://open.spotify.com/artist/2UDLunvKgvTASh2DzxWgXj" target="_blank" class="nav-icon" title="Spotify">
-      <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-    </a>
-    <a href="https://soundcloud.com/joelfreck" target="_blank" class="nav-icon" title="SoundCloud">
-      <svg viewBox="0 0 24 24"><path d="M1.175 12.225c-.574 0-1.055.466-1.055 1.05 0 .57.466 1.036 1.04 1.036.585 0 1.056-.466 1.056-1.05.015-.6-.456-1.036-1.041-1.036zm2.579-2.055c-.45 0-.81.36-.81.81v2.34c0 .39.315.705.705.705.39 0 .705-.315.705-.705V10.98c0-.45-.36-.81-.81-.81zm2.235-1.65c-.45 0-.81.36-.81.81v4.8c0 .45.36.81.81.81.45 0 .81-.36.81-.81v-4.8c0-.45-.36-.81-.81-.81zm2.235-1.74c-.45 0-.81.36-.81.81v6.54c0 .45.36.81.81.81.45 0 .81-.36.81-.81V7.59c0-.45-.36-.81-.81-.81zm2.25-1.59c-.45 0-.81.36-.81.81v8.13c0 .45.36.81.81.81.45 0 .81-.36.81-.81V5.99c0-.45-.36-.81-.81-.81zm9.885 4.125c-.345 0-.66.09-.96.225C19.05 3.21 17.31 1.68 15.21 1.68c-1.185 0-2.265.465-3.045 1.215v9.66c0 .45.36.81.81.81h7.41c2.1 0 3.81-1.71 3.81-3.81 0-2.085-1.695-3.795-3.81-3.795z"/></svg>
-    </a>
-    <a href="https://www.instagram.com/JoelFreck/" target="_blank" class="nav-icon" title="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-    </a>
-    <a href="https://www.youtube.com/joelfreck" target="_blank" class="nav-icon" title="YouTube">
-      <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-    </a>
-    <a href="https://www.facebook.com/JoelFreck/" target="_blank" class="nav-icon" title="Facebook">
-      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-    </a>
-    <button class="nav-contact-btn" onclick="openModal()">Contact</button>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="home">
-  <div class="hero-atm"></div>
-  <div class="hero-lines">
-    <svg viewBox="0 0 700 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f56a00" stop-opacity="0.25"/><stop offset="100%" stop-color="#c8922a" stop-opacity="0"/></linearGradient>
-        <linearGradient id="lg2" x1="100%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#c8922a" stop-opacity="0.15"/><stop offset="100%" stop-color="#f56a00" stop-opacity="0"/></linearGradient>
-      </defs>
-      <path d="M-80,400 C80,280 220,560 400,400 S640,160 780,360" stroke="url(#lg1)" stroke-width="2" fill="none"/>
-      <path d="M-40,600 C140,460 300,680 480,540 S700,300 820,480" stroke="url(#lg1)" stroke-width="1.2" fill="none"/>
-      <path d="M60,200 C160,380 80,580 300,640 S580,440 720,560" stroke="url(#lg2)" stroke-width="1" fill="none"/>
-      <ellipse cx="140" cy="320" rx="100" ry="60" fill="rgba(245,106,0,0.025)" transform="rotate(-20,140,320)"/>
-    </svg>
-  </div>
-  <div class="hero-left">
-    <div class="hero-eyebrow">Halifax, Canada · DJ · Producer</div>
-    <h1 class="hero-name">Joel<em>Freck</em></h1>
-    <p class="hero-sub">Anjunabeats winner. Armada artist. ECMA nominated. House music from Halifax to festival mainstages.</p>
-    <div class="hero-ctas">
-      <a href="#live" class="btn-p">Watch Live</a>
-      <button class="btn-g" onclick="openModal()">Contact</button>
-    </div>
-    <div class="scroll-cue">Scroll</div>
-  </div>
-  <div class="hero-right">
-    <img class="hero-photo" src="JFFULL.png" alt="Joel Freck - House Music DJ and Producer from Halifax Canada" style="object-position:center top;">
-  </div>
-</section>
-
-<!-- LIVE FOOTAGE -->
-<section id="live" aria-labelledby="live-title">
-  <div class="live-inner">
-    <div class="live-copy">
-      <div class="slabel">Live footage</div>
-      <h2 class="stitle" id="live-title">See the<br><em>room.</em></h2>
-      <p>Live footage from Joel Freck’s sets, including his residency with PT93.</p>
-      <span class="live-kicker">Joel Freck · performance highlights</span>
-    </div>
-    <div class="live-main">
-      <video id="livePromo" src="joel-pt93-promo-web.mp4" autoplay muted loop playsinline preload="metadata" poster="joel-pt93-promo-poster.jpg" aria-label="Joel Freck live performance highlights with PT93"></video>
-      <div class="live-controls">
-        <button type="button" id="livePlayToggle" aria-label="Pause video">Pause</button>
-        <button type="button" id="liveSoundToggle" aria-label="Turn sound on" aria-pressed="false">Sound off</button>
+      <div class="hero-media"><figure class="hero-portrait"><div class="hero-film-top"><span>Joel Freck</span><span>DJ / Producer</span></div><img src="JFFULL.png" width="1151" height="977" alt="Joel Freck" fetchpriority="high"></figure>
+      <figure class="hero-film">
+        <div class="hero-film-top"><span><span class="orange-dot"></span>Live highlights</span><span>00:34</span></div>
+        <div class="hero-film-frame">
+          <video id="hero-video" muted loop playsinline preload="metadata" poster="joel-pt93-promo-poster.jpg" aria-label="Joel Freck performance highlights with PT93"><source src="joel-pt93-promo-web.mp4" type="video/mp4"></video>
+          <div class="film-controls">
+            <button id="hero-play" type="button" aria-label="Play highlight video">Play</button>
+            <button id="hero-sound" type="button" aria-pressed="false" aria-label="Turn sound on"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4zm5 5 5 6m0-6-5 6"/></svg><span>Sound off</span></button>
+          </div>
+        </div>
+      </figure><p class="hero-media-caption">Live footage from Joel Freck’s sets, including his residency with PT93.</p></div>
+    </section>
+    <section id="live" class="wrap section" aria-labelledby="live-title">
+      <div class="section-top">
+        <h2 id="live-title">Live, from the floor.</h2>
       </div>
-    </div>
-  </div>
-  <div class="live-more">
-    <div class="live-more-label">More live clips</div>
-    <div class="live-clips">
-      <figure class="live-clip"><video controls playsinline preload="none" poster="summer-live-poster.jpg" aria-label="Summer live clip"><source src="summer-live-web.mp4" type="video/mp4"></video><figcaption>Summer set</figcaption></figure>
-      <figure class="live-clip"><video controls playsinline preload="none" poster="life-sounding-good-live-poster.jpg" aria-label="Life Sounding Good live clip"><source src="life-sounding-good-live-web.mp4" type="video/mp4"></video><figcaption>Life sounding good</figcaption></figure>
-      <figure class="live-clip"><video controls playsinline preload="none" poster="shiver-live-poster.jpg" aria-label="Locked In live clip"><source src="shiver-live-web.mp4" type="video/mp4"></video><figcaption>Locked in</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-wrap">
-    <div class="about-corner"></div>
-    <div class="about-frame">
-      <img src="JF_Pacif.png" alt="Joel Freck DJ performing live Halifax">
-    </div>
-  </div>
-  <div class="about-wrap">
-    <div class="slabel">About</div>
-    <h2 class="stitle">Joel<br>Freck</h2>
-    <div class="abody">
+      <div class="clips">
+        <button class="clip" type="button" data-video="summer-live-web.mp4" data-title="Summer set" data-poster="summer-live-poster.jpg" aria-label="Watch Summer set, 19 seconds">
+          <div class="clip-image"><img src="summer-live-poster.jpg" width="1280" height="720" loading="lazy" alt="Crowd dancing under green lights"><span class="clip-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span><span class="clip-duration">00:19</span></div>
+          <div class="clip-caption"><span>Summer set</span><span>01 / Live clip</span></div>
+        </button>
+        <button class="clip" type="button" data-video="life-sounding-good-live-web.mp4" data-title="Life sounding good" data-poster="life-sounding-good-live-poster.jpg" aria-label="Watch Life sounding good, 17 seconds">
+          <div class="clip-image"><img src="life-sounding-good-live-poster.jpg" width="1280" height="720" loading="lazy" alt="A full dance floor during a Joel Freck and PT93 set"><span class="clip-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span><span class="clip-duration">00:17</span></div>
+          <div class="clip-caption"><span>Life sounding good</span><span>02 / Live clip</span></div>
+        </button>
+        <button class="clip" type="button" data-video="shiver-live-web.mp4" data-title="Locked in" data-poster="shiver-live-poster.jpg" aria-label="Watch Locked in, 36 seconds">
+          <div class="clip-image"><img src="shiver-live-poster.jpg" width="1280" height="720" loading="lazy" alt="Joel Freck and PT93 performing behind the decks"><span class="clip-play"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/></svg></span><span class="clip-duration">00:36</span></div>
+          <div class="clip-caption"><span>Locked in</span><span>03 / Live clip</span></div>
+        </button>
+      </div>
+      <div class="support-line"><span>Selected support appearances</span><div class="support-names"><span>Laidback Luke</span><span>James Kennedy</span><span>Dave Summer</span></div></div>
+    </section>
+<section id="about" class="wrap section about" aria-labelledby="about-title"><figure class="about-photo"><img src="JF_Pacif.png" width="1214" height="1533" loading="lazy" alt="Joel Freck behind the decks"><figcaption>Joel Freck / Halifax, Canada</figcaption></figure><div class="about-copy"><div class="eyebrow section-index">About</div><h2 id="about-title">Joel Freck</h2>
       <p>Canadian Producer/DJ from Halifax. Over the past few years Joel has gained support from <strong>Armin Van Buuren, Above &amp; Beyond, Laidback Luke,</strong> and Fedde Le Grand, among others.</p>
       <p>In 2018 he won the <strong>Anjunabeats producer contest</strong> hosted by Beatport, earning a signing and a spot on Anjunabeats Worldwide. Shortly after, he took first place in <strong>Laidback Luke's 'Rockin' with the Best'</strong> remix competition — sharing the stage with Luke in San Diego and Las Vegas.</p>
       <p>In 2020, his collaboration 'Dawn' was selected for <strong>Armada's A State of Trance</strong> label, appearing on Armin's Ibiza 2020 compilation and ASOT Year Mix. Back-to-back <strong>ECMA nominations</strong> for Dance Recording of the Year followed in 2021 and 2022.</p>
-    </div>
-    <div class="tags">
-      <span class="tag">Halifax, CA</span>
-      <span class="tag">Anjunabeats</span>
-      <span class="tag">Armada</span>
-      <span class="tag">ECMA Nominated</span>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM STRIP - moved below About -->
-<section id="gram" style="padding:var(--sp) 44px; background:var(--bg);">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:12px;">
-    <div class="slabel" style="margin-bottom:0;">Instagram</div>
-    <a href="https://www.instagram.com/JoelFreck/" target="_blank" class="gram-lnk">@JoelFreck →</a>
-  </div>
-
-  <!-- Fouita live Instagram feed -->
-  <div data-key="Masonry Instagram Feed" class="ft" id="ftvm7yswh"></div>
-  <script src="https://wdg.fouita.com/widgets/0x43f496.js"></script>
-
-  <!-- Fallback placeholder (hidden once Fouita loads) -->
-  <div id="gram-fallback" class="gram-outer" style="display:none;">
-    <div class="gram-track">
-      <div class="gram-card"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="opacity:0.15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span style="font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;">Photo</span></div>
-      <div class="gram-card"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="opacity:0.15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span style="font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;">Photo</span></div>
-      <div class="gram-card"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="opacity:0.15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span style="font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;">Photo</span></div>
-      <div class="gram-card"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="opacity:0.15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span style="font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;">Photo</span></div>
-      <div class="gram-card"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="opacity:0.15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span style="font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;">Photo</span></div>
-      <div class="gram-card"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="opacity:0.15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span style="font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;">Photo</span></div>
-      <div class="gram-card"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="opacity:0.15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span style="font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;">Photo</span></div>
-      <div class="gram-card"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="opacity:0.15"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span style="font-size:0.6rem;color:var(--muted);letter-spacing:0.08em;">Photo</span></div>
-    </div>
-  </div>
-
-</section>
-
-<!-- RESIDENCY -->
-<section id="residency">
-  <div class="res-grid">
-    <div class="res-info">
-      <div class="slabel">Past residency</div>
-      <div class="res-venue">Pacifico<br><em>Halifax</em></div>
-      <div class="res-nights">
-        <span class="res-night">3-year run</span>
-        <span class="res-night">Friday &amp; Saturday</span>
-      </div>
-      <p class="res-body">
-        Joel and <strong>PT93</strong> held a Friday and Saturday residency at Pacifico for three years, building a regular house crowd in Halifax.
-      </p>
-      <a href="https://www.instagram.com/JoelFreck/" target="_blank" class="res-cta">Follow for updates →</a>
-    </div>
-
-    <div class="res-collage">
-      <div class="res-photo">
-        <img src="res_duo.jpg" alt="Joel Freck and PT93">
-      </div>
-      <div class="res-photo">
-        <img src="res_stage1.jpg" alt="Joel Freck and PT93 performing live">
-      </div>
-      <div class="res-photo">
-        <img src="res_stage2.jpg" alt="Joel Freck and PT93 live Halifax crowd" style="object-position:center 15%;">
+    </div></section>
+    <div class="wrap credentials-after-about">
+      <div class="credentials" aria-label="Selected credentials">
+        <div class="credential"><small>Beatport producer competition winner</small><strong>Anjunabeats</strong></div>
+        <div class="credential"><small>Releases on</small><strong>Armada Music</strong></div>
+        <div class="credential"><small>Dance recording nominations · 2021 / 2022</small><strong>East Coast Music Awards</strong></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- MUSIC -->
-<section id="music">
-  <div class="music-hd">
-    <div>
-      <div class="slabel">Music</div>
-      <h2 class="stitle">Latest<br>Releases</h2>
-    </div>
-    <a href="https://soundcloud.com/joelfreck" target="_blank" class="gram-lnk">All tracks →</a>
-  </div>
-
-  <div class="now-bar" id="nowBar">
-    <div class="now-top">
-      <div class="now-dot"></div>
-      <span class="now-label" id="nowLabel">Now Playing</span>
-    </div>
-    <div class="now-controls">
-      <button class="now-btn" onclick="prevTrack()" title="Previous">
-        <svg viewBox="0 0 24 24"><polygon points="19,20 9,12 19,4"/><line x1="5" y1="4" x2="5" y2="20" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-      </button>
-      <button class="now-btn play-pause" id="playPauseBtn" onclick="togglePause()" title="Pause">
-        <svg id="playPauseIcon" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-      </button>
-      <button class="now-btn" onclick="nextTrack()" title="Next">
-        <svg viewBox="0 0 24 24"><polygon points="5,4 15,12 5,20"/><line x1="19" y1="4" x2="19" y2="20" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-      </button>
-      <button class="now-btn" onclick="stopTrack()" title="Stop" style="border-radius:2px;font-size:0.6rem;font-family:var(--fb);letter-spacing:0.1em;text-transform:uppercase;width:auto;padding:0 12px;color:var(--muted);">Stop</button>
-    </div>
-  </div>
-
-  <div class="sc-wrap">
-    <button class="sc-arrow sc-arrow-l" id="arrowL" onclick="scrollTracks(-1)" disabled>&#8592;</button>
-    <div class="sc-viewport" id="scViewport">
-      <div class="sc-track" id="scTrack"></div>
-    </div>
-    <button class="sc-arrow sc-arrow-r" id="arrowR" onclick="scrollTracks(1)">&#8594;</button>
-  </div>
-
-  <iframe id="sc-player" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;" scrolling="no" allow="autoplay" src=""></iframe>
-</section>
-
-<!-- Mobile player: visible iframe required for iOS autoplay -->
-<div id="mobile-player" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:var(--bg2);border-top:1px solid var(--border);">
-  <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px 4px;">
-    <span id="mobile-now-label" style="font-size:0.75rem;color:var(--cream);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:12px;"></span>
-    <button onclick="closeMobilePlayer()" style="background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1;">&#x2715;</button>
-  </div>
-  <iframe id="sc-player-mobile" scrolling="no" allow="autoplay" style="width:100%;height:166px;border:none;display:block;" src=""></iframe>
-</div>
-
-
-<!-- STREAMING -->
-<section id="streaming">
+<section id="music" class="legacy-section" aria-labelledby="music-title"><div class="wrap">
+<div class="music-hd"><div><div class="eyebrow section-index">Music</div><h2 id="music-title">Latest releases</h2></div><a class="text-link" href="https://soundcloud.com/joelfreck" target="_blank" rel="noopener noreferrer">All tracks ↗</a></div>
+<div class="music-player" id="music-player"><p class="player-placeholder" id="player-placeholder">Choose a track to listen.</p><iframe id="soundcloud-player" title="Joel Freck music player" allow="autoplay" hidden></iframe><a class="track-external" id="track-external" href="https://soundcloud.com/joelfreck" target="_blank" rel="noopener noreferrer" hidden>Open this track on SoundCloud ↗</a><p id="music-status" role="status"></p></div>
+<div class="sc-wrap"><button class="sc-arrow sc-arrow-l" id="arrowL" type="button" aria-label="Previous releases" disabled>←</button><div class="sc-viewport" id="scViewport"><div class="sc-track" id="scTrack">
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/stateside1" data-title="Stateside (Remix)" aria-pressed="false" aria-label="Play Stateside (Remix)"><span class="sc-art-wrap" id="art-0"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Stateside (Remix)</span><span class="sc-meta">Joel Freck · 2026</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/katy-perry-birthday" data-title="Birthday Heads Will Roll (Edit)" aria-pressed="false" aria-label="Play Birthday Heads Will Roll (Edit)"><span class="sc-art-wrap" id="art-1"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Birthday Heads Will Roll (Edit)</span><span class="sc-meta">Joel Freck · 2025</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/chainsmokers-closer-ft-halsey-joel-freck-ft-vestral-remix" data-title="Closer (Remix)" aria-pressed="false" aria-label="Play Closer (Remix)"><span class="sc-art-wrap" id="art-2"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Closer (Remix)</span><span class="sc-meta">Joel Freck · 2025</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/halseywithoutme" data-title="Without Me (Remix)" aria-pressed="false" aria-label="Play Without Me (Remix)"><span class="sc-art-wrap" id="art-3"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Without Me (Remix)</span><span class="sc-meta">Joel Freck · 2025</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/pump-up-stephanie" data-title="Pump Up Stephanie (Edit)" aria-pressed="false" aria-label="Play Pump Up Stephanie (Edit)"><span class="sc-art-wrap" id="art-4"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Pump Up Stephanie (Edit)</span><span class="sc-meta">Joel Freck · 2025</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/messyremix" data-title="Messy (Edit)" aria-pressed="false" aria-label="Play Messy (Edit)"><span class="sc-art-wrap" id="art-5"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Messy (Edit)</span><span class="sc-meta">Joel Freck · 2025</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/no-surrender-original-mixw-kayrae" data-title="No Surrender (ft. Kayrae)" aria-pressed="false" aria-label="Play No Surrender (ft. Kayrae)"><span class="sc-art-wrap" id="art-6"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">No Surrender (ft. Kayrae)</span><span class="sc-meta">Joel Freck · 2024</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/vaatu-original-mix" data-title="Vaatu (Original Mix)" aria-pressed="false" aria-label="Play Vaatu (Original Mix)"><span class="sc-art-wrap" id="art-7"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Vaatu (Original Mix)</span><span class="sc-meta">Joel Freck · 2024</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/05-joel-freck-falling-radio" data-title="Falling (Original Mix)" aria-pressed="false" aria-label="Play Falling (Original Mix)"><span class="sc-art-wrap" id="art-8"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Falling (Original Mix)</span><span class="sc-meta">Joel Freck · 2024</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/warehouse-original-mix" data-title="Warehouse (Original Mix)" aria-pressed="false" aria-label="Play Warehouse (Original Mix)"><span class="sc-art-wrap" id="art-9"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Warehouse (Original Mix)</span><span class="sc-meta">Joel Freck · 2023</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/bounce-original-mix" data-title="Bounce (Original Mix)" aria-pressed="false" aria-label="Play Bounce (Original Mix)"><span class="sc-art-wrap" id="art-10"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Bounce (Original Mix)</span><span class="sc-meta">Joel Freck · 2023</span></span></button>
+<button class="sc-card music-choice" type="button" data-track="https://soundcloud.com/joelfreck/dawn" data-title="Dawn" aria-pressed="false" aria-label="Play Dawn"><span class="sc-art-wrap" id="art-11"><span class="art-placeholder">JF</span><span class="sc-play-btn">▶</span></span><span class="sc-info"><span class="sc-title">Dawn</span><span class="sc-meta">Joel Freck · 2020</span></span></button>
+</div></div><button class="sc-arrow sc-arrow-r" id="arrowR" type="button" aria-label="Next releases">→</button></div>
+</div></section>
+<section id="streaming" class="legacy-section"><div class="wrap">
   <div class="slabel">Streaming</div>
   <h2 class="stitle">Also On</h2>
   <div class="stream-grid">
@@ -582,9 +341,9 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
           <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
           Spotify
         </div>
-        <a href="https://open.spotify.com/artist/2UDLunvKgvTASh2DzxWgXj" target="_blank" class="stream-open">Open ↗</a>
+        <a href="https://open.spotify.com/artist/2UDLunvKgvTASh2DzxWgXj" target="_blank" rel="noopener noreferrer" class="stream-open">Open ↗</a>
       </div>
-      <iframe class="stream-embed" src="https://open.spotify.com/embed/artist/2UDLunvKgvTASh2DzxWgXj?utm_source=generator&theme=0&type=artist" height="452" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe class="stream-embed" title="Joel Freck on Spotify" src="https://open.spotify.com/embed/artist/2UDLunvKgvTASh2DzxWgXj?utm_source=generator&theme=0&type=artist" height="452" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <div class="stream-card">
       <div class="stream-card-header">
@@ -592,246 +351,153 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
           <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           YouTube
         </div>
-        <a href="https://www.youtube.com/joelfreck" target="_blank" class="stream-open">Open ↗</a>
+        <a href="https://www.youtube.com/joelfreck" target="_blank" rel="noopener noreferrer" class="stream-open">Open ↗</a>
       </div>
-      <iframe class="stream-embed" height="340" src="https://www.youtube.com/embed/videoseries?list=UUItF_XacJS6pe8ZlwgEiMKg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" height="452"></iframe>
+      <iframe class="stream-embed" title="Joel Freck on YouTube" height="452" src="https://www.youtube.com/embed/videoseries?list=UUItF_XacJS6pe8ZlwgEiMKg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
-</section>
+</div></section>
+<section id="residency" class="legacy-section"><div class="wrap">
+  <div class="res-grid">
+    <div class="res-info">
+      <div class="slabel">Past residency</div>
+      <div class="res-venue">Pacifico<br><em>Halifax</em></div>
+      
+      <p class="res-body">
+        Joel and <strong>PT93</strong> held a Friday and Saturday residency at Pacifico for three years. Within their first month, they grew roughly 20-person nights into regular 300–400-person rooms, opening and closing every residency night.
+      </p>
+      <a href="https://www.instagram.com/JoelFreck/" target="_blank" rel="noopener noreferrer" class="res-cta">Follow for updates →</a>
+    </div>
 
-<footer>
-  <div class="flogo">Joel<em>.</em>Freck</div>
-  <div class="flinks">
-    <a href="https://open.spotify.com/artist/2UDLunvKgvTASh2DzxWgXj" target="_blank">Spotify</a>
-    <a href="https://soundcloud.com/joelfreck" target="_blank">SoundCloud</a>
-    <a href="https://www.instagram.com/JoelFreck/" target="_blank">Instagram</a>
-    <a href="https://www.youtube.com/joelfreck" target="_blank">YouTube</a>
-    <a href="https://www.facebook.com/JoelFreck/" target="_blank">Facebook</a>
-    <a href="https://mixcloud.com/joelfreck" target="_blank">Mixcloud</a>
-  </div>
-  <div class="fcopy">© 2026 Joel Freck · Halifax, Canada</div>
-</footer>
-
-<script>
-// ── MODAL ──
-function openModal() { document.getElementById('modalBg').classList.add('on'); document.body.style.overflow='hidden'; }
-function closeModalDirect() { document.getElementById('modalBg').classList.remove('on'); document.body.style.overflow=''; }
-function closeModal(e) { if(e.target===document.getElementById('modalBg')) closeModalDirect(); }
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeModalDirect(); });
-
-function sendMsg(e) {
-  e.preventDefault();
-  const f = e.target;
-  const name = f.fname.value;
-  const email = f.email.value;
-  const msg = f.message.value;
-  const mailto = `mailto:joel.freck@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent('From: ' + name + '\nEmail: ' + email + '\n\n' + msg)}`;
-  window.location.href = mailto;
-  f.style.display='none';
-  document.getElementById('modalOk').style.display='block';
-}
-
-// ── LIVE VIDEO ──
-const livePromo = document.getElementById('livePromo');
-const livePlayToggle = document.getElementById('livePlayToggle');
-const liveSoundToggle = document.getElementById('liveSoundToggle');
-let liveManuallyPaused = false;
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function syncLiveControls() {
-  livePlayToggle.textContent = livePromo.paused ? 'Play' : 'Pause';
-  livePlayToggle.setAttribute('aria-label', livePromo.paused ? 'Play video' : 'Pause video');
-  liveSoundToggle.textContent = livePromo.muted ? 'Sound off' : 'Sound on';
-  liveSoundToggle.setAttribute('aria-label', livePromo.muted ? 'Turn sound on' : 'Turn sound off');
-  liveSoundToggle.setAttribute('aria-pressed', String(!livePromo.muted));
-}
-livePlayToggle.addEventListener('click', () => {
-  if (livePromo.paused) { liveManuallyPaused = false; livePromo.play().catch(syncLiveControls); }
-  else { liveManuallyPaused = true; livePromo.pause(); }
-  syncLiveControls();
-});
-liveSoundToggle.addEventListener('click', () => {
-  livePromo.muted = !livePromo.muted;
-  if (livePromo.paused) { liveManuallyPaused = false; livePromo.play().catch(syncLiveControls); }
-  syncLiveControls();
-});
-livePromo.addEventListener('play', syncLiveControls);
-livePromo.addEventListener('pause', syncLiveControls);
-livePromo.addEventListener('volumechange', syncLiveControls);
-if ('IntersectionObserver' in window) {
-  new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) { livePromo.pause(); livePromo.muted = true; }
-    else if (!liveManuallyPaused && !reducedMotion && document.visibilityState === 'visible') { livePromo.play().catch(syncLiveControls); }
-    syncLiveControls();
-  }, { threshold:0.2 }).observe(livePromo);
-}
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'hidden') { livePromo.pause(); livePromo.muted = true; syncLiveControls(); }
-});
-if (reducedMotion) livePromo.pause();
-syncLiveControls();
-
-// Keep one audible live clip playing at a time.
-document.querySelectorAll('.live-clip video').forEach(clip => {
-  clip.addEventListener('play', () => {
-    livePromo.muted = true;
-    livePromo.pause();
-    document.querySelectorAll('.live-clip video').forEach(other => { if (other !== clip) other.pause(); });
-    syncLiveControls();
-  });
-});
-
-// ── SC CAROUSEL ──
-const tracks = [
-  { url:'https://soundcloud.com/joelfreck/stateside1', short:'Stateside (Remix)', year:'2026' },
-  { url:'https://soundcloud.com/joelfreck/katy-perry-birthday', short:'Birthday Heads Will Roll (Edit)', year:'2025' },
-  { url:'https://soundcloud.com/joelfreck/chainsmokers-closer-ft-halsey-joel-freck-ft-vestral-remix', short:'Closer (Remix)', year:'2025' },
-  { url:'https://soundcloud.com/joelfreck/halseywithoutme', short:'Without Me (Remix)', year:'2025' },
-  { url:'https://soundcloud.com/joelfreck/pump-up-stephanie', short:'Pump Up Stephanie (Edit)', year:'2025' },
-  { url:'https://soundcloud.com/joelfreck/messyremix', short:'Messy (Edit)', year:'2025' },
-  { url:'https://soundcloud.com/joelfreck/no-surrender-original-mixw-kayrae', short:'No Surrender (ft. Kayrae)', year:'2024' },
-  { url:'https://soundcloud.com/joelfreck/vaatu-original-mix', short:'Vaatu (Original Mix)', year:'2024' },
-  { url:'https://soundcloud.com/joelfreck/05-joel-freck-falling-radio', short:'Falling (Original Mix)', year:'2024' },
-  { url:'https://soundcloud.com/joelfreck/warehouse-original-mix', short:'Warehouse (Original Mix)', year:'2023' },
-  { url:'https://soundcloud.com/joelfreck/bounce-original-mix', short:'Bounce (Original Mix)', year:'2023' },
-  { url:'https://soundcloud.com/joelfreck/dawn', short:'Dawn', year:'2020' },
-];
-
-const CARD_W = 204;
-let offset = 0;
-
-function visibleCount() {
-  return Math.max(1, Math.floor((document.getElementById('scViewport')?.offsetWidth||800) / CARD_W));
-}
-
-function scrollTracks(dir) {
-  const max = Math.max(0, tracks.length - visibleCount());
-  offset = Math.max(0, Math.min(max, offset + dir));
-  document.getElementById('scTrack').style.transform = `translateX(-${offset * CARD_W}px)`;
-  updateArrows();
-}
-
-function updateArrows() {
-  const max = Math.max(0, tracks.length - visibleCount());
-  document.getElementById('arrowL').disabled = offset === 0;
-  document.getElementById('arrowR').disabled = offset >= max;
-}
-
-let currentTrack = -1;
-let isPaused = false;
-
-function isMobile() {
-  return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth <= 900;
-}
-
-function closeMobilePlayer() {
-  document.getElementById('mobile-player').style.display = 'none';
-  document.getElementById('sc-player-mobile').src = '';
-  document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('playing'));
-  currentTrack = -1;
-}
-
-function playTrack(i) {
-  currentTrack = i;
-  isPaused = false;
-  document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('playing'));
-  document.getElementById('card-'+i)?.classList.add('playing');
-  const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(tracks[i].url)}&color=%23f56a00&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false`;
-  if (isMobile()) {
-    document.getElementById('sc-player-mobile').src = src;
-    document.getElementById('mobile-now-label').textContent = tracks[i].short + ' — Joel Freck';
-    document.getElementById('mobile-player').style.display = 'block';
-    return;
-  }
-  document.getElementById('sc-player').src = src;
-  document.getElementById('nowLabel').textContent = tracks[i].short + ' — Joel Freck';
-  document.getElementById('nowBar').classList.add('on');
-  setPlayIcon(false);
-}
-
-function togglePause() {
-  if (currentTrack < 0) return;
-  isPaused = !isPaused;
-  if (isPaused) {
-    // Reload without autoplay to effectively pause (SC widget limitation without API)
-    const src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(tracks[currentTrack].url)}&color=%23f56a00&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false`;
-    document.getElementById('sc-player').src = src;
-  } else {
-    playTrack(currentTrack);
-  }
-  setPlayIcon(isPaused);
-}
-
-function setPlayIcon(paused) {
-  const btn = document.getElementById('playPauseBtn');
-  const icon = document.getElementById('playPauseIcon');
-  if (paused) {
-    btn.classList.add('paused');
-    icon.innerHTML = '<polygon points="5,3 19,12 5,21"/>';
-    icon.parentElement.querySelector('polygon')?.setAttribute('style','margin-left:3px');
-  } else {
-    btn.classList.remove('paused');
-    icon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
-  }
-}
-
-function nextTrack() {
-  if (currentTrack < tracks.length - 1) playTrack(currentTrack + 1);
-}
-
-function prevTrack() {
-  if (currentTrack > 0) playTrack(currentTrack - 1);
-}
-
-function stopTrack() {
-  document.getElementById('sc-player').src = '';
-  document.getElementById('sc-player-mobile').src = '';
-  document.getElementById('mobile-player').style.display = 'none';
-  document.querySelectorAll('.sc-card').forEach(c => c.classList.remove('playing'));
-  document.getElementById('nowBar').classList.remove('on');
-  currentTrack = -1;
-  isPaused = false;
-}
-
-async function buildCarousel() {
-  const track = document.getElementById('scTrack');
-  track.innerHTML = tracks.map((t, i) => `
-    <div class="sc-card" id="card-${i}" onclick="playTrack(${i})">
-      <div class="sc-art-wrap" id="art-${i}">
-        <div style="width:190px;height:190px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(245,106,0,0.25)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16" fill="rgba(245,106,0,0.25)" stroke="none"/></svg>
-        </div>
-        <div class="sc-play-btn"><div class="sc-play-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+    <div class="res-collage">
+      <div class="res-photo">
+        <img loading="lazy" src="res_duo.jpg" alt="Joel Freck and PT93">
       </div>
-      <div class="sc-info">
-        <div class="sc-title">${t.short}</div>
-        <div class="sc-meta">Joel Freck · ${t.year}</div>
+      <div class="res-photo">
+        <img loading="lazy" src="res_stage1.jpg" alt="Joel Freck and PT93 performing live">
+      </div>
+      <div class="res-photo">
+        <img loading="lazy" src="res_stage2.jpg" alt="Joel Freck and PT93 live Halifax crowd" style="object-position:center 15%;">
       </div>
     </div>
-  `).join('');
-
-  // Try to load artwork via oEmbed
-  tracks.forEach(async (t, i) => {
-    try {
-      const r = await fetch(`https://soundcloud.com/oembed?format=json&url=${encodeURIComponent(t.url)}`);
-      const d = await r.json();
-      if (d.thumbnail_url) {
-        const wrap = document.getElementById('art-'+i);
-        if (wrap) wrap.innerHTML = `<img src="${d.thumbnail_url}" alt="${t.short}" style="width:190px;height:190px;object-fit:cover;display:block;"><div class="sc-play-btn"><div class="sc-play-icon"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>`;
+  </div>
+</div></section>
+<section id="gram" class="legacy-section" aria-label="Instagram"><div class="wrap"><div class="music-hd"><div class="slabel">Instagram</div><a class="text-link" href="https://www.instagram.com/JoelFreck/" target="_blank" rel="noopener noreferrer">@JoelFreck ↗</a></div><div data-key="Masonry Instagram Feed" class="ft" id="ftvm7yswh"></div><script src="https://wdg.fouita.com/widgets/0x43f496.js" defer></script><p class="gram-note">More live clips and recent posts on <a href="https://www.instagram.com/joelfreck/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></p></div></section>
+    <section id="booking" class="booking" aria-labelledby="booking-title">
+      <div class="wrap booking-inner"><div><p class="eyebrow">Club nights / Festivals / Support slots</p><h2 id="booking-title">Book<br>Joel Freck.</h2></div><div class="booking-right"><p>Available for opening, headline and guest sets. Book Joel Freck solo or alongside PT93.</p><a class="button" href="mailto:joel.freck@gmail.com?subject=Joel%20Freck%20%E2%80%94%20Booking%20inquiry">Email Joel <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></svg></a><a class="booking-email" href="mailto:joel.freck@gmail.com">joel.freck@gmail.com</a></div></div>
+    </section>
+  </main>
+  <footer class="wrap footer"><div class="socials"><a href="https://www.instagram.com/joelfreck/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://soundcloud.com/joelfreck" target="_blank" rel="noopener noreferrer">SoundCloud ↗</a><a href="https://open.spotify.com/artist/2UDLunvKgvTASh2DzxWgXj" target="_blank" rel="noopener noreferrer">Spotify ↗</a><a href="https://www.youtube.com/joelfreck" target="_blank" rel="noopener noreferrer">YouTube ↗</a></div><small>© 2026 Joel Freck · Halifax, Canada</small></footer>
+  <dialog id="clip-dialog" aria-labelledby="clip-title"><div class="dialog-top"><h2 id="clip-title">Live clip</h2><button type="button" class="dialog-close" id="clip-close">Close <span aria-hidden="true">×</span></button></div><video id="clip-video" controls playsinline loop preload="none" aria-label="Selected live performance clip"></video><p class="media-status" id="clip-status" role="status"></p></dialog>
+  <script>
+    const hero = document.getElementById('hero-video');
+    const heroPlay = document.getElementById('hero-play');
+    const heroSound = document.getElementById('hero-sound');
+    const dialog = document.getElementById('clip-dialog');
+    const clipVideo = document.getElementById('clip-video');
+    const clipStatus = document.getElementById('clip-status');
+    const player = document.getElementById('soundcloud-player');
+    const placeholder = document.getElementById('player-placeholder');
+    const musicStatus = document.getElementById('music-status');
+    const trackExternal = document.getElementById('track-external');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let heroVisible = false;
+    let manuallyPaused = false;
+    let musicActive = false;
+    function syncHero() {
+      heroPlay.textContent = hero.paused ? 'Play' : 'Pause';
+      heroPlay.setAttribute('aria-label', hero.paused ? 'Play highlight video' : 'Pause highlight video');
+      heroSound.querySelector('span').textContent = hero.muted ? 'Sound off' : 'Sound on';
+      heroSound.setAttribute('aria-label', hero.muted ? 'Turn sound on' : 'Turn sound off');
+      heroSound.setAttribute('aria-pressed', String(!hero.muted));
+    }
+    function quietHero() { hero.pause(); hero.muted = true; syncHero(); }
+    function resumeHero() {
+      if (heroVisible && !manuallyPaused && !reduceMotion.matches && !dialog.open && !musicActive && !document.hidden) {
+        hero.muted = true;
+        hero.play().catch(syncHero);
       }
-    } catch(e) {}
-  });
+    }
+    function stopMusic() {
+      if (!musicActive) return;
+      player.removeAttribute('src'); player.hidden = true; placeholder.hidden = false; trackExternal.hidden = true;
+      musicStatus.textContent = ''; musicActive = false;
+      document.querySelectorAll('.music-choice').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    }
+    heroPlay.addEventListener('click', () => {
+      if (hero.paused) { manuallyPaused = false; stopMusic(); hero.play().catch(syncHero); }
+      else { manuallyPaused = true; hero.pause(); }
+      syncHero();
+    });
+    heroSound.addEventListener('click', () => {
+      stopMusic(); hero.muted = !hero.muted;
+      if (hero.paused) { manuallyPaused = false; hero.play().catch(syncHero); }
+      syncHero();
+    });
+    ['play','pause','volumechange','error'].forEach(e => hero.addEventListener(e, syncHero));
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; if (heroVisible) resumeHero(); else quietHero(); }, {threshold:.2}).observe(hero);
+    }
+    document.addEventListener('visibilitychange', () => { if (document.hidden) { quietHero(); clipVideo.pause(); } else resumeHero(); });
+    reduceMotion.addEventListener('change', () => { if (reduceMotion.matches) quietHero(); else resumeHero(); });
+    document.querySelectorAll('.clip').forEach(button => button.addEventListener('click', () => {
+      quietHero(); stopMusic(); clipStatus.textContent = '';
+      document.getElementById('clip-title').textContent = button.dataset.title;
+      clipVideo.poster = button.dataset.poster;
+      clipVideo.src = button.dataset.video;
+      clipVideo.setAttribute('aria-label', button.dataset.title + ' live performance clip');
+      dialog.showModal(); document.body.classList.add('modal-open');
+      clipVideo.play().catch(() => { clipStatus.textContent = 'Press play to start the clip.'; });
+    }));
+    document.getElementById('clip-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      const r = dialog.getBoundingClientRect();
+      if (event.target === dialog && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) dialog.close();
+    });
+    dialog.addEventListener('close', () => {
+      clipVideo.pause(); clipVideo.removeAttribute('src'); clipVideo.load();
+      document.body.classList.remove('modal-open'); clipStatus.textContent = ''; resumeHero();
+    });
+    clipVideo.addEventListener('error', () => { if (clipVideo.getAttribute('src')) clipStatus.textContent = 'This clip could not load. Please close it and try again.'; });
+    document.querySelectorAll('.music-choice').forEach(button => button.addEventListener('click', () => {
+      quietHero(); musicActive = true;
+      document.querySelectorAll('.music-choice').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      placeholder.hidden = true; player.hidden = false;
+      trackExternal.href = button.dataset.track; trackExternal.hidden = false;
+      musicStatus.textContent = '';
+      player.title = button.dataset.title + ' by Joel Freck on SoundCloud';
+      player.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(button.dataset.track) + '&color=%23ff713d&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false';
+      if (window.matchMedia('(max-width:720px)').matches) document.getElementById('music-player').scrollIntoView({behavior:reduceMotion.matches?'auto':'smooth',block:'center'});
+    }));
 
-  updateArrows();
-}
+    const viewport = document.getElementById('scViewport');
+    function updateReleaseArrows() {
+      document.getElementById('arrowL').disabled = viewport.scrollLeft < 2;
+      document.getElementById('arrowR').disabled = viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 2;
+    }
+    document.getElementById('arrowL').addEventListener('click', () => viewport.scrollBy({left:-204,behavior:reduceMotion.matches?'auto':'smooth'}));
+    document.getElementById('arrowR').addEventListener('click', () => viewport.scrollBy({left:204,behavior:reduceMotion.matches?'auto':'smooth'}));
+    viewport.addEventListener('scroll', updateReleaseArrows, {passive:true});
+    window.addEventListener('resize', updateReleaseArrows);
+    updateReleaseArrows();
+    document.querySelectorAll('.music-choice').forEach(async button => {
+      try {
+        const response = await fetch('https://soundcloud.com/oembed?format=json&url=' + encodeURIComponent(button.dataset.track));
+        if (!response.ok) return;
+        const data = await response.json();
+        if (typeof data.thumbnail_url !== 'string' || !data.thumbnail_url.startsWith('https://')) return;
+        const img = document.createElement('img');
+        img.src = data.thumbnail_url; img.alt = ''; img.loading = 'lazy'; img.width = 190; img.height = 190;
+        button.querySelector('.art-placeholder').replaceWith(img);
+      } catch (_) { /* Track titles and player remain usable without artwork. */ }
+    });
 
-window.addEventListener('DOMContentLoaded', buildCarousel);
-window.addEventListener('resize', updateArrows);
-</script>
+    syncHero();
+  </script>
 <!-- Vercel Web Analytics: anonymous page views, included in the Hobby plan. -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
-
 </body>
 </html>
