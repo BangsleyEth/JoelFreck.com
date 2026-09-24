@@ -103,6 +103,15 @@ nav {
 .btn-g:hover { border-color:var(--or); color:var(--or); }
 .scroll-cue { display:none; }
 
+
+/* ── MORE LIVE CLIPS ── */
+.live-more { max-width:1100px; margin:44px auto 0; }
+.live-more-label { color:var(--or); font-size:0.65rem; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:14px; }
+.live-clips { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.live-clip { min-width:0; }
+.live-clip video { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:var(--bg3); border:1px solid var(--border); }
+.live-clip figcaption { margin-top:8px; color:var(--muted); font-size:0.7rem; letter-spacing:0.04em; }
+@media (max-width:800px) { .live-clips { grid-template-columns:1fr; gap:22px; } .live-more { margin-top:36px; } }
 /* ── ABOUT ── */
 #about { padding:var(--sp) 44px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:stretch; background:var(--bg2); position:relative; overflow:hidden; }
 #about::before { content:''; position:absolute; top:-40%; right:-15%; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(245,106,0,0.06) 0%, transparent 70%); pointer-events:none; }
@@ -409,7 +418,7 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
     <div class="live-copy">
       <div class="slabel">Live footage</div>
       <h2 class="stitle" id="live-title">See the<br><em>room.</em></h2>
-      <p>A quick look at my live sets, including nights at Pacifico alongside PT93. The music and energy are easier to show than explain.</p>
+      <p>Live footage from Joel Freck’s sets, including his residency with PT93.</p>
       <span class="live-kicker">Joel Freck · performance highlights</span>
     </div>
     <div class="live-main">
@@ -418,6 +427,14 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
         <button type="button" id="livePlayToggle" aria-label="Pause video">Pause</button>
         <button type="button" id="liveSoundToggle" aria-label="Turn sound on" aria-pressed="false">Sound off</button>
       </div>
+    </div>
+  </div>
+  <div class="live-more">
+    <div class="live-more-label">More live clips</div>
+    <div class="live-clips">
+      <figure class="live-clip"><video controls playsinline preload="none" poster="summer-live-poster.jpg" aria-label="Summer live clip"><source src="summer-live-web.mp4" type="video/mp4"></video><figcaption>Summer set</figcaption></figure>
+      <figure class="live-clip"><video controls playsinline preload="none" poster="life-sounding-good-live-poster.jpg" aria-label="Life Sounding Good live clip"><source src="life-sounding-good-live-web.mp4" type="video/mp4"></video><figcaption>Life sounding good</figcaption></figure>
+      <figure class="live-clip"><video controls playsinline preload="none" poster="shiver-live-poster.jpg" aria-label="Locked In live clip"><source src="shiver-live-web.mp4" type="video/mp4"></video><figcaption>Locked in</figcaption></figure>
     </div>
   </div>
 </section>
@@ -478,14 +495,14 @@ footer { background:var(--bg); border-top:1px solid var(--border); padding:28px 
 <section id="residency">
   <div class="res-grid">
     <div class="res-info">
-      <div class="slabel">Residency</div>
-      <div class="res-venue">Halifax<br><em>Residency</em></div>
+      <div class="slabel">Past residency</div>
+      <div class="res-venue">Pacifico<br><em>Halifax</em></div>
       <div class="res-nights">
-        <span class="res-night">Every Friday</span>
-        <span class="res-night">Every Saturday</span>
+        <span class="res-night">3-year run</span>
+        <span class="res-night">Friday &amp; Saturday</span>
       </div>
       <p class="res-body">
-        Joel holds a weekly residency in Halifax alongside <strong>PT93</strong> — two DJs, one room, every weekend. Come check it out.
+        Joel and <strong>PT93</strong> held a Friday and Saturday residency at Pacifico for three years, building a regular house crowd in Halifax.
       </p>
       <a href="https://www.instagram.com/JoelFreck/" target="_blank" class="res-cta">Follow for updates →</a>
     </div>
@@ -652,6 +669,16 @@ document.addEventListener('visibilitychange', () => {
 });
 if (reducedMotion) livePromo.pause();
 syncLiveControls();
+
+// Keep one audible live clip playing at a time.
+document.querySelectorAll('.live-clip video').forEach(clip => {
+  clip.addEventListener('play', () => {
+    livePromo.muted = true;
+    livePromo.pause();
+    document.querySelectorAll('.live-clip video').forEach(other => { if (other !== clip) other.pause(); });
+    syncLiveControls();
+  });
+});
 
 // ── SC CAROUSEL ──
 const tracks = [
