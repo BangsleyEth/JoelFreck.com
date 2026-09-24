@@ -177,11 +177,39 @@
     @media(max-width:1100px){.hero{grid-template-columns:1fr 1fr;gap:26px}.hero-copy{grid-column:1/-1}.hero h1{font-size:80px;line-height:.85;margin-bottom:18px}.hero h1 span{display:inline}.hero h1 span+span{margin-left:12px}.hero-location{margin-bottom:18px}.hero-description{max-width:600px}.hero-footnote{margin-top:18px}.hero-film{max-width:260px}.hero-portrait{max-width:440px;justify-self:center;width:100%}.hero-portrait img{height:350px}}
     @media(max-width:720px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px 14px;padding-block:28px}.hero-copy{grid-column:1/-1}.hero h1{font-size:clamp(65px,16vw,90px)}.hero-description{font-size:16px}.hero-actions{margin-top:20px}.hero-portrait img{height:auto;aspect-ratio:4/5;object-position:56% center}.hero-portrait figcaption{display:block;font-size:11px;line-height:1.7}.hero-portrait figcaption span{display:block}.hero-film{max-width:none}.hero-film-top{font-size:8px;letter-spacing:.05em;gap:5px}.hero-film-top .orange-dot{display:none}.film-controls{position:static;display:flex;gap:4px;background:#161716;padding:6px 0}.film-controls button{padding:8px 6px;font-size:10px;min-height:40px;justify-content:center;flex:1}.film-controls svg{display:none}.hero-film-frame{aspect-ratio:auto;overflow:visible}.hero-film video{aspect-ratio:9/16;height:auto}.hero-film-frame::after{display:none}.hero-film figcaption{font-size:9px}.section{padding-block:38px}.about{gap:27px}.about-photo{min-height:0;aspect-ratio:4/3}.about-copy h2{font-size:55px}.about-copy p{font-size:14px}.legacy-section{padding-block:28px}.legacy-section h2{font-size:40px}.music-hd{align-items:center}.stream-grid{grid-template-columns:1fr}.stream-embed{height:352px}.res-grid{grid-template-columns:1fr;gap:28px}.res-collage{min-height:330px}.res-body{font-size:14px}.booking h2{font-size:66px}.sc-wrap{padding-inline:18px}.music-player{margin-bottom:14px}}
 
+
+    /* Keep the portrait and all performance footage together. */
+    .hero{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:48px;padding-block:26px 12px}
+    .hero-copy{grid-column:auto}
+    .hero-media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px;align-items:start;width:100%;justify-self:end}
+    .hero-media .hero-portrait,.hero-media .hero-film{width:100%;max-width:none;margin:0;align-self:start}
+    .hero-media .hero-film-top{height:16px;margin:0 0 10px;font-size:9px;letter-spacing:.06em}
+    .hero-media .hero-film-top .orange-dot{display:none}
+    .hero-media .hero-portrait img{width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;object-position:53% center}
+    .hero-media .hero-film-frame{aspect-ratio:9/16;overflow:hidden}
+    .hero-media .hero-film video{height:100%;aspect-ratio:9/16;object-fit:cover}
+    .hero-media-caption{grid-column:1/-1;margin:0;color:var(--muted);font-size:10px;line-height:1.6}
+    .hero-media .film-controls{position:absolute;inset:auto 8px 8px;padding:0;gap:5px;background:none}
+    .hero-media .film-controls button{font-size:10px;padding:8px 9px;min-height:40px}
+    .hero-media .film-controls svg{display:none}
+    #live{padding-top:18px;padding-bottom:28px}
+    #live .section-top{margin:0 0 18px;display:block;border-top:1px solid var(--line);padding-top:18px}
+    #live h2{font-size:clamp(28px,3vw,40px);line-height:1;letter-spacing:0}
+    #live .clip-image{aspect-ratio:16/9}
+    #live .support-line{margin-top:22px;padding-top:18px}
+    #about{padding-block:32px 24px}
+    .credentials-after-about{padding-bottom:30px}
+    .credentials-after-about .credential{padding:14px 20px}
+    .credentials-after-about .credential:first-child{padding-left:0}
+    .credentials-after-about .credential small{font-size:9px;letter-spacing:.07em;line-height:1.5;margin-bottom:5px}
+    .credentials-after-about .credential strong{font-size:23px}
+    @media(max-width:1100px) and (min-width:721px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,430px);gap:28px}.hero h1 span{display:block}.hero h1 span+span{margin-left:0}.hero h1{font-size:80px}.hero-description{font-size:16px}.hero-actions{flex-direction:column;align-items:start}}
+    @media(max-width:720px){.hero{grid-template-columns:1fr;gap:20px;padding-block:22px 8px}.hero-copy{grid-column:auto}.hero-media{max-width:400px;justify-self:center;gap:9px 12px}.hero-media .hero-film-top{font-size:8px;letter-spacing:0}.hero-media .hero-portrait .hero-film-top span:last-child{display:none}.hero-media .film-controls{inset:auto 5px 5px}.hero-media .film-controls button{padding:7px 4px;min-height:40px}.hero-media-caption{font-size:10px}#live{padding-block:12px 24px}#live .section-top{padding-top:14px;margin-bottom:16px}#live h2{font-size:30px}.credentials-after-about .credential,.credentials-after-about .credential:first-child{padding:12px 0}.credentials-after-about .credential small{margin:0;max-width:160px}.credentials-after-about .credential strong{font-size:21px}.credentials-after-about{padding-bottom:24px}}
   </style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-  <div class="wrap preview-note"><span>Design preview / 02</span><a href="/">View current site ↗</a></div>
+  <div class="wrap preview-note"><span>Design preview / 03</span><a href="/">View current site ↗</a></div>
   <header class="site-header">
     <nav class="wrap nav" aria-label="Main navigation">
       <a class="wordmark" href="#main" aria-label="Joel Freck home">JOEL<span>.</span>FRECK</a>
@@ -201,7 +229,7 @@
         </div>
         <p class="hero-footnote">DJ / Producer / Armada &amp; Anjunabeats releases</p>
       </div>
-      <figure class="hero-portrait"><img src="JFFULL.png" width="1151" height="977" alt="Joel Freck" fetchpriority="high"><figcaption>Joel Freck <span>DJ / Producer</span></figcaption></figure>
+      <div class="hero-media"><figure class="hero-portrait"><div class="hero-film-top"><span>Joel Freck</span><span>DJ / Producer</span></div><img src="JFFULL.png" width="1151" height="977" alt="Joel Freck" fetchpriority="high"></figure>
       <figure class="hero-film">
         <div class="hero-film-top"><span><span class="orange-dot"></span>Live highlights</span><span>00:34</span></div>
         <div class="hero-film-frame">
@@ -211,20 +239,11 @@
             <button id="hero-sound" type="button" aria-pressed="false" aria-label="Turn sound on"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4zm5 5 5 6m0-6-5 6"/></svg><span>Sound off</span></button>
           </div>
         </div>
-        <figcaption>Live footage from Joel Freck’s sets, including his residency with PT93.</figcaption>
-      </figure>
+      </figure><p class="hero-media-caption">Live footage from Joel Freck’s sets, including his residency with PT93.</p></div>
     </section>
-    <div class="wrap">
-      <div class="credentials" aria-label="Selected credentials">
-        <div class="credential"><small>Beatport producer competition winner</small><strong>Anjunabeats</strong></div>
-        <div class="credential"><small>Releases on</small><strong>Armada Music</strong></div>
-        <div class="credential"><small>Dance recording nominations · 2021 / 2022</small><strong>East Coast Music Awards</strong></div>
-      </div>
-    </div>
     <section id="live" class="wrap section" aria-labelledby="live-title">
       <div class="section-top">
-        <div><div class="eyebrow section-index"><span>01</span>Performance</div><h2 id="live-title">Live, from<br>the floor.</h2></div>
-        <p>From the opening tracks to the closing set. A few moments from Joel’s nights behind the decks with PT93.</p>
+        <h2 id="live-title">Live, from the floor.</h2>
       </div>
       <div class="clips">
         <button class="clip" type="button" data-video="summer-live-web.mp4" data-title="Summer set" data-poster="summer-live-poster.jpg" aria-label="Watch Summer set, 19 seconds">
@@ -247,6 +266,13 @@
       <p>In 2018 he won the <strong>Anjunabeats producer contest</strong> hosted by Beatport, earning a signing and a spot on Anjunabeats Worldwide. Shortly after, he took first place in <strong>Laidback Luke's 'Rockin' with the Best'</strong> remix competition — sharing the stage with Luke in San Diego and Las Vegas.</p>
       <p>In 2020, his collaboration 'Dawn' was selected for <strong>Armada's A State of Trance</strong> label, appearing on Armin's Ibiza 2020 compilation and ASOT Year Mix. Back-to-back <strong>ECMA nominations</strong> for Dance Recording of the Year followed in 2021 and 2022.</p>
     </div></section>
+    <div class="wrap credentials-after-about">
+      <div class="credentials" aria-label="Selected credentials">
+        <div class="credential"><small>Beatport producer competition winner</small><strong>Anjunabeats</strong></div>
+        <div class="credential"><small>Releases on</small><strong>Armada Music</strong></div>
+        <div class="credential"><small>Dance recording nominations · 2021 / 2022</small><strong>East Coast Music Awards</strong></div>
+      </div>
+    </div>
 <section id="music" class="legacy-section" aria-labelledby="music-title"><div class="wrap">
 <div class="music-hd"><div><div class="eyebrow section-index">Music</div><h2 id="music-title">Latest releases</h2></div><a class="text-link" href="https://soundcloud.com/joelfreck" target="_blank" rel="noopener noreferrer">All tracks ↗</a></div>
 <div class="music-player" id="music-player"><p class="player-placeholder" id="player-placeholder">Choose a track to listen.</p><iframe id="soundcloud-player" title="Joel Freck music player" allow="autoplay" hidden></iframe><a class="track-external" id="track-external" href="https://soundcloud.com/joelfreck" target="_blank" rel="noopener noreferrer" hidden>Open this track on SoundCloud ↗</a><p id="music-status" role="status"></p></div>
