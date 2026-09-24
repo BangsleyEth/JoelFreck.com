@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url><loc>https://joelfreck.com/</loc><lastmod>2026-09-24</lastmod></url>
+  <url>
+    <loc>https://joelfreck.com/joel-freck-live-highlights.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://joelfreck.com/JF_Pacif.png</video:thumbnail_loc>
+      <video:title>Joel Freck &amp; PT93 — Live House DJ Highlights</video:title>
+      <video:description>Watch Halifax house DJ and producer Joel Freck performing live, including footage from his Pacifico residency alongside PT93. Club highlights, crowd moments and time behind the decks.</video:description>
+      <video:content_loc>https://joelfreck.com/joel-pt93-promo-web.mp4</video:content_loc>
+      <video:duration>34</video:duration>
+      <video:publication_date>2026-09-23T18:35:58Z</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://joelfreck.com/joel-freck-pt93-summer-set.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://joelfreck.com/summer-live-poster.jpg</video:thumbnail_loc>
+      <video:title>Joel Freck &amp; PT93 — Summer Set in Halifax</video:title>
+      <video:description>A live house DJ clip from Joel Freck and PT93 at Pacifico in Halifax, Nova Scotia, with the crowd dancing under green lights.</video:description>
+      <video:content_loc>https://joelfreck.com/summer-live-web.mp4</video:content_loc>
+      <video:duration>19</video:duration>
+      <video:publication_date>2026-09-24T03:20:14Z</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://joelfreck.com/joel-freck-pt93-life-sounding-good.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://joelfreck.com/life-sounding-good-live-poster.jpg</video:thumbnail_loc>
+      <video:title>Joel Freck &amp; PT93 — Life Sounding Good, Live in Halifax</video:title>
+      <video:description>Watch a packed Pacifico dance floor during a Joel Freck and PT93 house set in Halifax, Nova Scotia. A short live performance clip from their three-year residency.</video:description>
+      <video:content_loc>https://joelfreck.com/life-sounding-good-live-web.mp4</video:content_loc>
+      <video:duration>17</video:duration>
+      <video:publication_date>2026-09-24T03:20:14Z</video:publication_date>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://joelfreck.com/joel-freck-pt93-locked-in.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://joelfreck.com/shiver-live-poster.jpg</video:thumbnail_loc>
+      <video:title>Joel Freck &amp; PT93 — Locked In, Live at Pacifico</video:title>
+      <video:description>Joel Freck and PT93 behind the decks at Pacifico in Halifax, Canada. Watch a live club performance from the house DJs' Friday and Saturday residency.</video:description>
+      <video:content_loc>https://joelfreck.com/shiver-live-web.mp4</video:content_loc>
+      <video:duration>36</video:duration>
+      <video:publication_date>2026-09-24T03:20:14Z</video:publication_date>
+    </video:video>
+  </url>
+</urlset>
