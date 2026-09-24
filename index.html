@@ -273,7 +273,7 @@
       <figure class="hero-film">
         <div class="hero-film-top"><span><span class="orange-dot"></span>Live highlights</span><span>00:34</span></div>
         <div class="hero-film-frame">
-          <video id="hero-video" muted loop playsinline preload="metadata" poster="joel-pt93-promo-poster.jpg" aria-label="Joel Freck performance highlights with PT93"><source src="joel-pt93-promo-web.mp4" type="video/mp4"></video>
+          <video id="hero-video" muted loop playsinline preload="auto" poster="JF_Pacif.png" aria-label="Joel Freck performance highlights with PT93"><source src="joel-pt93-promo-web.mp4" type="video/mp4"></video>
           <div class="film-controls">
             <button id="hero-play" type="button" aria-label="Play highlight video">Play</button>
             <button id="hero-sound" type="button" aria-pressed="false" aria-label="Turn sound on"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m11 4-6 5H2v6h3l6 5V4zm5 5 5 6m0-6-5 6"/></svg><span>Sound off</span></button>
@@ -402,6 +402,9 @@
     const trackExternal = document.getElementById('track-external');
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let heroVisible = false;
+    let heroStartReady = false;
+    hero.defaultMuted = true;
+    hero.muted = true;
     let manuallyPaused = false;
     let musicActive = false;
     function syncHero() {
@@ -413,7 +416,7 @@
     }
     function quietHero() { hero.pause(); hero.muted = true; syncHero(); }
     function resumeHero() {
-      if (heroVisible && !manuallyPaused && !reduceMotion.matches && !dialog.open && !musicActive && !document.hidden) {
+      if (heroStartReady && heroVisible && hero.paused && !manuallyPaused && !reduceMotion.matches && !dialog.open && !musicActive && !document.hidden) {
         hero.muted = true;
         hero.play().catch(syncHero);
       }
@@ -435,8 +438,21 @@
       syncHero();
     });
     ['play','pause','volumechange','error'].forEach(e => hero.addEventListener(e, syncHero));
+    // Start without a click after one second; retry when slower connections are ready.
+    function checkHeroVisibility() {
+      const bounds = hero.getBoundingClientRect();
+      heroVisible = bounds.bottom > 0 && bounds.top < window.innerHeight && bounds.right > 0 && bounds.left < window.innerWidth;
+      if (heroVisible) resumeHero(); else quietHero();
+    }
+    window.setTimeout(() => { heroStartReady = true; checkHeroVisibility(); }, 1000);
+    hero.addEventListener('loadeddata', resumeHero);
+    hero.addEventListener('canplay', resumeHero);
+    window.addEventListener('pageshow', checkHeroVisibility);
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; if (heroVisible) resumeHero(); else quietHero(); }, {threshold:.2}).observe(hero);
+    } else {
+      window.addEventListener('scroll', checkHeroVisibility, {passive:true});
+      window.addEventListener('resize', checkHeroVisibility);
     }
     document.addEventListener('visibilitychange', () => { if (document.hidden) { quietHero(); clipVideo.pause(); } else resumeHero(); });
     reduceMotion.addEventListener('change', () => { if (reduceMotion.matches) quietHero(); else resumeHero(); });
