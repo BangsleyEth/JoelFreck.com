@@ -135,14 +135,14 @@
     .preview-note a{text-decoration:underline;text-underline-offset:3px}
     .site-header{border-bottom:1px solid var(--line)}
     .nav{height:83px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .wordmark{font-family:var(--display);font-size:31px;font-weight:800;line-height:1;letter-spacing:-.03em;white-space:nowrap}
+    .wordmark{font-family:var(--display);font-size:2rem;font-weight:800;line-height:1;letter-spacing:.035em;white-space:nowrap}
     .wordmark span{color:var(--orange)}
-    .nav-links{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:500}
+    .nav-links{display:flex;align-items:center;gap:clamp(.75rem,1.65vw,1.5rem);font-size:.875rem;font-weight:700;letter-spacing:.045em;text-transform:uppercase}
     .nav-links a{padding-block:12px}
     .nav-links a:hover{color:var(--orange)}
     .hero-actions .mobile-lesson-link{display:none}
     @media(max-width:720px){.hero-actions .mobile-lesson-link{display:inline-flex}}
-    .nav-book{display:flex;gap:20px;align-items:center;border:1px solid #ffffff55;padding:12px 17px;min-height:44px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
+    .nav-book{display:flex;gap:20px;align-items:center;border:1px solid #ffffff55;padding:12px 17px;min-height:44px;font-size:.8125rem;font-weight:700;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap}
     .nav-book:hover{background:var(--paper);color:var(--ink)}
     .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(30px,7vw,100px);padding-top:48px;padding-bottom:55px;align-items:center}
     .hero-copy{padding-block:18px}
@@ -229,7 +229,7 @@
     .media-status:empty{display:none}
     @media(min-width:1600px){.hero{padding-top:58px;padding-bottom:65px}.hero-film{width:360px}}
     @media(min-width:721px) and (max-height:800px){.hero{padding-top:30px;padding-bottom:35px}.hero-film{width:280px}.hero-copy{padding-block:0}h1{font-size:clamp(112px,12vw,176px);margin-bottom:26px}.hero-location{margin-bottom:20px}.hero-footnote{margin-top:24px}}
-    @media(max-width:1000px){.nav-links{gap:20px}.hero{gap:40px;grid-template-columns:minmax(0,1fr) minmax(270px,.85fr)}h1{font-size:clamp(112px,16vw,164px)}.hero-description{font-size:17px}.hero-actions{gap:10px}.button{gap:18px;padding-inline:17px}.credentials .credential{padding-left:20px}.credentials .credential:first-child{padding-left:0}.credential strong{font-size:28px}.music-grid{gap:35px}.about{gap:40px}}
+    @media(max-width:1000px){.hero{gap:40px;grid-template-columns:minmax(0,1fr) minmax(270px,.85fr)}h1{font-size:clamp(112px,16vw,164px)}.hero-description{font-size:17px}.hero-actions{gap:10px}.button{gap:18px;padding-inline:17px}.credentials .credential{padding-left:20px}.credentials .credential:first-child{padding-left:0}.credential strong{font-size:28px}.music-grid{gap:35px}.about{gap:40px}}
     @media(max-width:720px){html{scroll-padding-top:20px}.preview-note{font-size:9px}.nav{height:70px;gap:12px}.nav-links{display:none}.wordmark{font-size:28px}.nav-book{font-size:10px;padding:10px 12px;gap:12px}.hero{grid-template-columns:1fr;padding-top:35px;padding-bottom:40px;gap:38px}.hero-copy{padding:0}.hero-location{font-size:10px;margin-bottom:25px}h1{font-size:clamp(108px,27vw,180px);line-height:.78;margin-bottom:27px}.hero-description{max-width:440px;font-size:17px}.hero-actions{margin-top:22px}.hero-footnote{margin-top:24px;font-size:9px}.hero-film{width:min(100%,310px)}.credentials{grid-template-columns:1fr}.credential,.credentials .credential,.credentials .credential:first-child{padding:19px 0;display:flex;align-items:center;justify-content:space-between;gap:15px}.credential+.credential{border-left:0;border-top:1px solid var(--line)}.credential small{font-size:9px;margin:0;max-width:140px}.credential strong{font-size:26px;text-align:right}.section{padding-block:53px}.section-top{display:block;margin-bottom:26px}.section-top p{margin-top:20px;font-size:13px}.section-index{font-size:10px;margin-bottom:13px}h2{font-size:65px}.clips{grid-template-columns:1fr;gap:28px}.clip-image{aspect-ratio:16/9}.clip-caption{padding-top:12px}.support-line{display:block;margin-top:29px}.support-names{margin-top:15px;gap:8px 20px;font-size:23px}.music-grid{grid-template-columns:1fr;gap:24px;margin-top:30px}.music-art{aspect-ratio:1.2/1}.art-bottom strong{font-size:63px}.music-player{min-height:0}.track{padding-block:19px}.track-name{font-size:17px}.music-links{font-size:11px}.about{grid-template-columns:1fr;gap:32px}.about-photo img{aspect-ratio:1/1;object-position:center 32%}.about-copy h2{font-size:62px;margin-bottom:23px}.about-copy p.lead{font-size:18px}.about-copy p{font-size:13px}.about-stats{margin-top:25px}.booking{padding-block:50px}.booking-inner{display:block}.booking h2{font-size:76px}.booking-right{margin-top:28px;max-width:none}.booking-right p{font-size:13px}.booking .button{max-width:420px}.booking-email{text-align:left;margin-top:19px}.footer{display:block;padding-block:25px}.socials{gap:16px;margin-bottom:22px}.footer small{line-height:1.8}.dialog-top{padding:12px}.dialog-top h2{font-size:13px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
@@ -271,7 +271,7 @@
     .stream-label{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}.stream-label svg{width:16px;height:16px;fill:currentColor;stroke:none}.stream-open{font-size:10px;color:var(--orange)}
     .stream-embed{width:100%;height:352px;border:0;display:block}
     .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch}
-    .res-venue{font:800 clamp(48px,5vw,68px)/.92 var(--display);text-transform:uppercase;margin:0 0 20px}.res-venue em{font-style:normal;color:var(--orange)}
+    .legacy-section .res-venue{font:800 clamp(48px,5vw,68px)/.92 var(--display);text-transform:uppercase;margin:0 0 20px}.res-venue em{display:block;font-style:normal;color:var(--orange)}
     .res-body{font-size:16px;line-height:1.85;color:#c4c3bb;max-width:440px;margin:0}.res-body strong{font-weight:500;color:var(--paper)}
     .res-cta{display:inline-block;font-size:12px;color:var(--orange);margin-top:22px;border-bottom:1px solid currentColor;padding-bottom:4px}
     .res-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;min-height:335px}
@@ -317,7 +317,7 @@
   <header class="site-header">
     <nav class="wrap nav" aria-label="Main navigation">
       <a class="wordmark" href="#main" aria-label="Joel Freck home">JOEL<span>.</span>FRECK</a>
-      <div class="nav-links"><a href="#live">Live</a><a href="#music">Music</a><a href="#about">About</a><a href="#residency">Residency</a><a href="/services">DJ Lessons</a></div>
+      <div class="nav-links"><a href="#live">Live</a><a href="#music">Music</a><a href="#about">About</a><a href="#residency">Residency</a><a href="/services">Lessons</a></div>
       <a class="nav-book" href="#booking">Bookings <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
     </nav>
   </header>
@@ -330,7 +330,7 @@
         <div class="hero-actions">
           <a class="button button-primary" href="#music">Explore the music <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
           <a class="button button-outline" href="#booking">Get in touch <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 14 10M5 10h9v9"/></svg></a>
-          <a class="button button-outline mobile-lesson-link" href="/services">DJ &amp; production lessons</a>
+          <a class="button button-outline mobile-lesson-link" href="/services">Lessons</a>
         </div>
         <p class="hero-footnote">DJ / Producer / Armada &amp; Anjunabeats releases</p>
       </div>
@@ -422,11 +422,11 @@
     </div>
   </div>
 </div></section>
-<section id="residency" class="legacy-section"><div class="wrap">
+<section id="residency" class="legacy-section" aria-labelledby="residency-title"><div class="wrap">
   <div class="res-grid">
     <div class="res-info">
       <div class="slabel">Past residency</div>
-      <div class="res-venue">Pacifico<br><em>Halifax</em></div>
+      <h2 class="res-venue" id="residency-title">Halifax <em>Residency</em></h2>
       
       <p class="res-body">
         Joel and <strong>PT93</strong> held a Friday and Saturday residency at Pacifico for three years. Within their first month, they grew roughly 20-person nights into regular 300–400-person rooms, opening and closing every residency night.
