@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101110">
+  <meta name="theme-color" content="#1c1b1e">
 <title>Joel Freck | House DJ &amp; Producer in Halifax, Canada</title>
 <meta name="description" content="Joel Freck (Joel Freckelton) is a house DJ and producer in Halifax, Nova Scotia, Canada. Watch live club performances, hear releases and enquire about bookings.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-video-preview:-1">
@@ -114,7 +114,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#101110;--paper:#efece4;--orange:#ff713d;--muted:#aaa9a1;--line:#ffffff25;--display:'Barlow Condensed',Impact,sans-serif;--body:'DM Sans',sans-serif;--gutter:clamp(22px,5vw,80px)}
+    :root{--ink:#1c1b1e;--ink-deep:#171619;--lavender-glow:#aa85ed25;--paper:#efece4;--orange:#ff713d;--muted:#aaa9a1;--line:#ffffff25;--display:'Barlow Condensed',Impact,sans-serif;--body:'DM Sans',sans-serif;--gutter:clamp(22px,5vw,80px)}
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:90px}
     body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);font-size:16px;-webkit-font-smoothing:antialiased}
@@ -133,10 +133,9 @@
     .skip:focus{top:20px}
     .preview-note{display:flex;justify-content:space-between;gap:16px;padding-block:9px;color:#b7b8b0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid var(--line)}
     .preview-note a{text-decoration:underline;text-underline-offset:3px}
-    .site-header{border-bottom:1px solid var(--line)}
+    .site-header{border-bottom:1px solid var(--line);background:var(--ink-deep)}
     .nav{height:83px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .wordmark{font-family:var(--display);font-size:2rem;font-weight:800;line-height:1;letter-spacing:.035em;white-space:nowrap}
-    .wordmark span{color:var(--orange)}
     .nav-links{display:flex;align-items:center;gap:clamp(.75rem,1.65vw,1.5rem);font-size:.875rem;font-weight:700;letter-spacing:.045em;text-transform:uppercase}
     .nav-links a{padding-block:12px}
     .nav-links a:hover{color:var(--orange)}
@@ -144,6 +143,7 @@
     @media(max-width:720px){.hero-actions .mobile-lesson-link{display:inline-flex}}
     .nav-book{display:flex;gap:20px;align-items:center;border:1px solid #ffffff55;padding:12px 17px;min-height:44px;font-size:.8125rem;font-weight:700;letter-spacing:.045em;text-transform:uppercase;white-space:nowrap}
     .nav-book:hover{background:var(--paper);color:var(--ink)}
+    main{background:radial-gradient(ellipse 52rem 33rem at 83% 0%,var(--lavender-glow),transparent 75%)}
     .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(30px,7vw,100px);padding-top:48px;padding-bottom:55px;align-items:center}
     .hero-copy{padding-block:18px}
     .hero-location{display:flex;align-items:center;gap:12px;margin:0 0 27px}
@@ -154,11 +154,11 @@
     .hero-description{font-size:clamp(17px,1.65vw,22px);line-height:1.6;max-width:440px;color:#cfcec6;margin:0}
     .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
     .button{display:inline-flex;justify-content:center;align-items:center;gap:26px;min-height:50px;padding:14px 21px;font-size:12px;font-weight:600;border:1px solid transparent}
+    .button,.nav-book{border-radius:999px}
     .button-primary{background:var(--orange);color:var(--ink)}
     .button-primary:hover{background:#ff8c60}
     .button-outline{border-color:#ffffff45}
     .button-outline:hover{border-color:var(--paper)}
-    .hero-footnote{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin:33px 0 0}
     .hero-film{width:min(100%,342px);justify-self:center;position:relative;isolation:isolate;margin:0}
     .hero-film::before{content:'';position:absolute;inset:13px -13px -13px 13px;border:1px solid #ff713d65;z-index:-1}
     .hero-film-top{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px}
@@ -228,9 +228,9 @@
     .media-status{font-size:12px;line-height:1.5;margin:0;padding:10px 20px;color:var(--muted)}
     .media-status:empty{display:none}
     @media(min-width:1600px){.hero{padding-top:58px;padding-bottom:65px}.hero-film{width:360px}}
-    @media(min-width:721px) and (max-height:800px){.hero{padding-top:30px;padding-bottom:35px}.hero-film{width:280px}.hero-copy{padding-block:0}h1{font-size:clamp(112px,12vw,176px);margin-bottom:26px}.hero-location{margin-bottom:20px}.hero-footnote{margin-top:24px}}
+    @media(min-width:721px) and (max-height:800px){.hero{padding-top:30px;padding-bottom:35px}.hero-film{width:280px}.hero-copy{padding-block:0}h1{font-size:clamp(112px,12vw,176px);margin-bottom:26px}.hero-location{margin-bottom:20px}}
     @media(max-width:1000px){.hero{gap:40px;grid-template-columns:minmax(0,1fr) minmax(270px,.85fr)}h1{font-size:clamp(112px,16vw,164px)}.hero-description{font-size:17px}.hero-actions{gap:10px}.button{gap:18px;padding-inline:17px}.credentials .credential{padding-left:20px}.credentials .credential:first-child{padding-left:0}.credential strong{font-size:28px}.music-grid{gap:35px}.about{gap:40px}}
-    @media(max-width:720px){html{scroll-padding-top:20px}.preview-note{font-size:9px}.nav{height:70px;gap:12px}.nav-links{display:none}.wordmark{font-size:28px}.nav-book{font-size:10px;padding:10px 12px;gap:12px}.hero{grid-template-columns:1fr;padding-top:35px;padding-bottom:40px;gap:38px}.hero-copy{padding:0}.hero-location{font-size:10px;margin-bottom:25px}h1{font-size:clamp(108px,27vw,180px);line-height:.78;margin-bottom:27px}.hero-description{max-width:440px;font-size:17px}.hero-actions{margin-top:22px}.hero-footnote{margin-top:24px;font-size:9px}.hero-film{width:min(100%,310px)}.credentials{grid-template-columns:1fr}.credential,.credentials .credential,.credentials .credential:first-child{padding:19px 0;display:flex;align-items:center;justify-content:space-between;gap:15px}.credential+.credential{border-left:0;border-top:1px solid var(--line)}.credential small{font-size:9px;margin:0;max-width:140px}.credential strong{font-size:26px;text-align:right}.section{padding-block:53px}.section-top{display:block;margin-bottom:26px}.section-top p{margin-top:20px;font-size:13px}.section-index{font-size:10px;margin-bottom:13px}h2{font-size:65px}.clips{grid-template-columns:1fr;gap:28px}.clip-image{aspect-ratio:16/9}.clip-caption{padding-top:12px}.support-line{display:block;margin-top:29px}.support-names{margin-top:15px;gap:8px 20px;font-size:23px}.music-grid{grid-template-columns:1fr;gap:24px;margin-top:30px}.music-art{aspect-ratio:1.2/1}.art-bottom strong{font-size:63px}.music-player{min-height:0}.track{padding-block:19px}.track-name{font-size:17px}.music-links{font-size:11px}.about{grid-template-columns:1fr;gap:32px}.about-photo img{aspect-ratio:1/1;object-position:center 32%}.about-copy h2{font-size:62px;margin-bottom:23px}.about-copy p.lead{font-size:18px}.about-copy p{font-size:13px}.about-stats{margin-top:25px}.booking{padding-block:50px}.booking-inner{display:block}.booking h2{font-size:76px}.booking-right{margin-top:28px;max-width:none}.booking-right p{font-size:13px}.booking .button{max-width:420px}.booking-email{text-align:left;margin-top:19px}.footer{display:block;padding-block:25px}.socials{gap:16px;margin-bottom:22px}.footer small{line-height:1.8}.dialog-top{padding:12px}.dialog-top h2{font-size:13px}}
+    @media(max-width:720px){html{scroll-padding-top:20px}.preview-note{font-size:9px}.nav{height:70px;gap:12px}.nav-links{display:none}.wordmark{font-size:28px}.nav-book{font-size:10px;padding:10px 12px;gap:12px}.hero{grid-template-columns:1fr;padding-top:35px;padding-bottom:40px;gap:38px}.hero-copy{padding:0}.hero-location{font-size:10px;margin-bottom:25px}h1{font-size:clamp(108px,27vw,180px);line-height:.78;margin-bottom:27px}.hero-description{max-width:440px;font-size:17px}.hero-actions{margin-top:22px}.hero-film{width:min(100%,310px)}.credentials{grid-template-columns:1fr}.credential,.credentials .credential,.credentials .credential:first-child{padding:19px 0;display:flex;align-items:center;justify-content:space-between;gap:15px}.credential+.credential{border-left:0;border-top:1px solid var(--line)}.credential small{font-size:9px;margin:0;max-width:140px}.credential strong{font-size:26px;text-align:right}.section{padding-block:53px}.section-top{display:block;margin-bottom:26px}.section-top p{margin-top:20px;font-size:13px}.section-index{font-size:10px;margin-bottom:13px}h2{font-size:65px}.clips{grid-template-columns:1fr;gap:28px}.clip-image{aspect-ratio:16/9}.clip-caption{padding-top:12px}.support-line{display:block;margin-top:29px}.support-names{margin-top:15px;gap:8px 20px;font-size:23px}.music-grid{grid-template-columns:1fr;gap:24px;margin-top:30px}.music-art{aspect-ratio:1.2/1}.art-bottom strong{font-size:63px}.music-player{min-height:0}.track{padding-block:19px}.track-name{font-size:17px}.music-links{font-size:11px}.about{grid-template-columns:1fr;gap:32px}.about-photo img{aspect-ratio:1/1;object-position:center 32%}.about-copy h2{font-size:62px;margin-bottom:23px}.about-copy p.lead{font-size:18px}.about-copy p{font-size:13px}.about-stats{margin-top:25px}.booking{padding-block:50px}.booking-inner{display:block}.booking h2{font-size:76px}.booking-right{margin-top:28px;max-width:none}.booking-right p{font-size:13px}.booking .button{max-width:420px}.booking-email{text-align:left;margin-top:19px}.footer{display:block;padding-block:25px}.socials{gap:16px;margin-bottom:22px}.footer small{line-height:1.8}.dialog-top{padding:12px}.dialog-top h2{font-size:13px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
     /* Second direction: the original site body, a performance-led opening. */
@@ -238,7 +238,6 @@
     .hero{grid-template-columns:minmax(250px,1.15fr) minmax(240px,1fr) minmax(230px,.78fr);gap:32px;padding-block:42px;align-items:center}
     .hero-copy{padding:0}.hero h1{font-size:clamp(76px,8vw,112px);line-height:.85;margin-bottom:25px}
     .hero-description{font-size:18px}.hero-actions{gap:10px}.hero-actions .button{padding:13px 16px;gap:12px}
-    .hero-footnote{font-size:9px;line-height:1.8;margin-top:23px}
     .hero-portrait{margin:0;align-self:center;min-width:0}.hero-portrait img{width:100%;height:365px;object-fit:cover;object-position:57% center}
     .hero-portrait figcaption{display:flex;justify-content:space-between;gap:10px;font-size:12px;margin-top:14px}
     .hero-portrait figcaption span{font-size:10px;color:var(--muted)}
@@ -279,7 +278,7 @@
     #gram{padding-block:40px;overflow:hidden}.gram-note{font-size:12px;color:var(--muted);line-height:1.7;margin:20px 0 0}.gram-note a{text-decoration:underline}
     .booking{padding-block:46px}.booking h2{font-size:clamp(62px,7vw,90px)}
     @media(min-width:1600px){.hero-film{max-width:290px}.hero-portrait img{height:415px}}
-    @media(max-width:1100px){.hero{grid-template-columns:1fr 1fr;gap:26px}.hero-copy{grid-column:1/-1}.hero h1{font-size:80px;line-height:.85;margin-bottom:18px}.hero h1 span{display:inline}.hero h1 span+span{margin-left:12px}.hero-location{margin-bottom:18px}.hero-description{max-width:600px}.hero-footnote{margin-top:18px}.hero-film{max-width:260px}.hero-portrait{max-width:440px;justify-self:center;width:100%}.hero-portrait img{height:350px}}
+    @media(max-width:1100px){.hero{grid-template-columns:1fr 1fr;gap:26px}.hero-copy{grid-column:1/-1}.hero h1{font-size:80px;line-height:.85;margin-bottom:18px}.hero h1 span{display:inline}.hero h1 span+span{margin-left:12px}.hero-location{margin-bottom:18px}.hero-description{max-width:600px}.hero-film{max-width:260px}.hero-portrait{max-width:440px;justify-self:center;width:100%}.hero-portrait img{height:350px}}
     @media(max-width:720px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px 14px;padding-block:28px}.hero-copy{grid-column:1/-1}.hero h1{font-size:clamp(65px,16vw,90px)}.hero-description{font-size:16px}.hero-actions{margin-top:20px}.hero-portrait img{height:auto;aspect-ratio:4/5;object-position:56% center}.hero-portrait figcaption{display:block;font-size:11px;line-height:1.7}.hero-portrait figcaption span{display:block}.hero-film{max-width:none}.hero-film-top{font-size:8px;letter-spacing:.05em;gap:5px}.hero-film-top .orange-dot{display:none}.film-controls{position:static;display:flex;gap:4px;background:#161716;padding:6px 0}.film-controls button{padding:8px 6px;font-size:10px;min-height:40px;justify-content:center;flex:1}.film-controls svg{display:none}.hero-film-frame{aspect-ratio:auto;overflow:visible}.hero-film video{aspect-ratio:9/16;height:auto}.hero-film-frame::after{display:none}.hero-film figcaption{font-size:9px}.section{padding-block:38px}.about{gap:27px}.about-photo{min-height:0;aspect-ratio:4/3}.about-copy h2{font-size:55px}.about-copy p{font-size:14px}.legacy-section{padding-block:28px}.legacy-section h2{font-size:40px}.music-hd{align-items:center}.stream-grid{grid-template-columns:1fr}.stream-embed{height:352px}.res-grid{grid-template-columns:1fr;gap:28px}.res-collage{min-height:330px}.res-body{font-size:14px}.booking h2{font-size:66px}.sc-wrap{padding-inline:18px}.music-player{margin-bottom:14px}}
 
 
@@ -316,7 +315,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <nav class="wrap nav" aria-label="Main navigation">
-      <a class="wordmark" href="#main" aria-label="Joel Freck home">JOEL<span>.</span>FRECK</a>
+      <a class="wordmark" href="#main" aria-label="Joel Freck home">JOEL FRECK</a>
       <div class="nav-links"><a href="#live">Live</a><a href="#music">Music</a><a href="#about">About</a><a href="#residency">Residency</a><a href="/services">Lessons</a></div>
       <a class="nav-book" href="#booking">Bookings <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
     </nav>
@@ -326,13 +325,12 @@
       <div class="hero-copy">
         <p class="eyebrow hero-location"><span class="orange-dot"></span>House DJ / Halifax, Canada</p>
         <h1 id="artist-name"><span>Joel</span> <span>Freck</span></h1>
-        <p class="hero-description">Current records, deeper cuts and original remixes. House music with range.</p>
+        <p class="hero-description">Halifax house DJ, producer, and remixer with two international contest wins and releases on Anjunabeats and Armada.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#music">Explore the music <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
           <a class="button button-outline" href="#booking">Get in touch <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 14 10M5 10h9v9"/></svg></a>
           <a class="button button-outline mobile-lesson-link" href="/services">Lessons</a>
         </div>
-        <p class="hero-footnote">DJ / Producer / Armada &amp; Anjunabeats releases</p>
       </div>
       <div class="hero-media"><figure class="hero-portrait"><div class="hero-film-top"><span>Joel Freck</span><span>DJ / Producer</span></div><img src="JFFULL.png" width="1151" height="977" alt="Joel Freck" fetchpriority="high"></figure>
       <figure class="hero-film">
