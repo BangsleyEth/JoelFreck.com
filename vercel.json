@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    }
+  ]
+}

@@ -140,6 +140,8 @@
     .nav-links{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:500}
     .nav-links a{padding-block:12px}
     .nav-links a:hover{color:var(--orange)}
+    .hero-actions .mobile-lesson-link{display:none}
+    @media(max-width:720px){.hero-actions .mobile-lesson-link{display:inline-flex}}
     .nav-book{display:flex;gap:20px;align-items:center;border:1px solid #ffffff55;padding:12px 17px;min-height:44px;font-size:11px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap}
     .nav-book:hover{background:var(--paper);color:var(--ink)}
     .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:clamp(30px,7vw,100px);padding-top:48px;padding-bottom:55px;align-items:center}
@@ -315,7 +317,7 @@
   <header class="site-header">
     <nav class="wrap nav" aria-label="Main navigation">
       <a class="wordmark" href="#main" aria-label="Joel Freck home">JOEL<span>.</span>FRECK</a>
-      <div class="nav-links"><a href="#live">Live</a><a href="#music">Music</a><a href="#about">About</a><a href="#residency">Residency</a></div>
+      <div class="nav-links"><a href="#live">Live</a><a href="#music">Music</a><a href="#about">About</a><a href="#residency">Residency</a><a href="/services">DJ Lessons</a></div>
       <a class="nav-book" href="#booking">Bookings <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
     </nav>
   </header>
@@ -328,6 +330,7 @@
         <div class="hero-actions">
           <a class="button button-primary" href="#music">Explore the music <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
           <a class="button button-outline" href="#booking">Get in touch <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 14 10M5 10h9v9"/></svg></a>
+          <a class="button button-outline mobile-lesson-link" href="/services">DJ &amp; production lessons</a>
         </div>
         <p class="hero-footnote">DJ / Producer / Armada &amp; Anjunabeats releases</p>
       </div>
